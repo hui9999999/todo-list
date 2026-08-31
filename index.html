@@ -977,7 +977,7 @@
       <div class="ds-form">
         <div class="ds-assoc" id="dsAssoc"></div>
         <select id="dsTask"><option value="">全部待办</option></select>
-        <textarea id="dsQ" placeholder="问点什么… 例：我今天有哪些待办？有多少未完成？下周有什么？"></textarea>
+        <textarea id="dsQ" placeholder="问点什么… 例：我今天有哪些待办？有多少未完成？也可以直接说「把测试任务三标记完成」"></textarea>
         <div class="ds-actions">
           <button class="btn ghost small" id="dsClear">清空</button>
           <button class="btn small" id="dsAsk">提问</button>
@@ -1792,7 +1792,7 @@ function celebrateGarden() {
 let dsHistory = [];
 let dsTaskId = ""; // 关联的单个任务 id；"" 表示全部待办
 let dsMode = "chat"; // DeepSeek 面板模式：chat(提问) / create(一句话建任务)
-const DS_TASKS_PROMPT = "\n\n【额外能力】如果用户的话里提到「带时间点的行动事项」（如：明天下午3点开会、周五前交报告、下周一给方案初稿），请在你回答的最后一行之后额外输出一个隐藏标记：<!--TASKS:{\"tasks\":[{\"text\":\"任务名\",\"due\":\"today|tomorrow|weekend|nextweek|monthend|nextmonth|m+数字|md+数字|nmd+数字|in+数字|dow+数字|next+数字|nn+数字|nextyear+月|YYYY-MM-DD|YYYY-MM-DDTHH:MM|空串\",\"prio\":\"high|mid|low\",\"children\":[]}]}-->。规则：due 只允许相对词 today/tomorrow/weekend/nextweek/monthend、nextmonth(下个月，如\"下个月\"→\"nextmonth\")、m+数字(X个月后，如\"下下个月\"→\"m2\")、md+数字(这月X号，如\"这月15\"→\"md15\")、nmd+数字(下月X号，如\"下月15\"→\"nmd15\")、in+数字(N天后，如\"三天后\"→\"in3\")、dow+数字(本周某天，0=周日..6=周六，如\"本周三\"→\"dow3\")、next+数字(下周某天，如\"下周三\"→\"next3\")、nn+数字(下下周某天，如\"下下周三\"→\"nn3\")、nextyear+月(明年某月，如\"明年3月\"→\"nextyear3\")、\"半个月后\"→\"in15\"，或用户明确给的日期（YYYY-MM-DD/YYYY-MM-DDTHH:MM），**千万不要自己推算明天/后天/下周对应哪一天**（系统按真实今天解析）；\"尽快/马上/今天内\"→today、\"这周/周末前\"→weekend、\"下周\"→nextweek、\"月底前\"→monthend；确属无压力日常事项才 due 留空串；prio 缺省 mid；一个事项对应一个任务，多步骤拆多个（children 放子任务）。没有这类带时间事项就**不要**输出该标记；普通咨询/解答问题不要凭空建任务。\n另外：如果用户要求\"修改/调整某任务的截止时间\"或你给某个任务建议了截止时间（如\"把去湖南的截止时间改成明天晚上7点半\"），不要建任务，而是输出隐藏标记：<!--UPDATEDUE:{\"text\":\"任务名\",\"due\":\"<相对词或日期>\"}-->；如果是\"提前/推迟 N 天/周/月\"（相对任务现有截止调整），不要填 due，而是填 shiftDays/shiftWeeks/shiftMonths（有符号整数，提前为负、推迟为正：\"提前一个月\"→{\"shiftMonths\":-1}、\"推迟一周\"→{\"shiftWeeks\":1}、\"提前3天\"→{\"shiftDays\":-3}）；若给了绝对日期则用 due。text 用任务名，due 用上述同一套相对词规则；找不到匹配任务就口头说明找不到。\n另外：如果用户要求\"导出\"数据（如：导出昨天的所有数据、导出本周的数据），不要建任务，而是输出隐藏标记：<!--ACTION:{\"action\":\"export\",\"start\":\"YYYY-MM-DD\",\"end\":\"YYYY-MM-DD\",\"field\":\"due\",\"name\":\"简短中文说明\"}-->。规则：start/end 为闭区间日期范围（\"昨天\"=昨天到昨天、\"今天\"=今天、\"本周\"=本周一到今天、\"本月\"=月初到今天、\"最近7天\"=7天前到今天）；field 可选 due(截止)/completedAt(完成)/created(创建)/any(截止·完成·创建任一落到范围内；例如用户说\"包括今天完成的/今天的所有数据\"时用 any)，默认 due；name 用简短中文。除导出指令外不要输出该标记。";
+const DS_TASKS_PROMPT = "\n\n【额外能力】如果用户的话里提到「带时间点的行动事项」（如：明天下午3点开会、周五前交报告、下周一给方案初稿），请在你回答的最后一行之后额外输出一个隐藏标记：<!--TASKS:{\"tasks\":[{\"text\":\"任务名\",\"due\":\"today|tomorrow|weekend|nextweek|monthend|nextmonth|m+数字|md+数字|nmd+数字|in+数字|dow+数字|next+数字|nn+数字|nextyear+月|YYYY-MM-DD|YYYY-MM-DDTHH:MM|空串\",\"prio\":\"high|mid|low\",\"children\":[]}]}-->。规则：due 只允许相对词 today/tomorrow/weekend/nextweek/monthend、nextmonth(下个月，如\"下个月\"→\"nextmonth\")、m+数字(X个月后，如\"下下个月\"→\"m2\")、md+数字(这月X号，如\"这月15\"→\"md15\")、nmd+数字(下月X号，如\"下月15\"→\"nmd15\")、in+数字(N天后，如\"三天后\"→\"in3\")、dow+数字(本周某天，0=周日..6=周六，如\"本周三\"→\"dow3\")、next+数字(下周某天，如\"下周三\"→\"next3\")、nn+数字(下下周某天，如\"下下周三\"→\"nn3\")、nextyear+月(明年某月，如\"明年3月\"→\"nextyear3\")、\"半个月后\"→\"in15\"，或用户明确给的日期（YYYY-MM-DD/YYYY-MM-DDTHH:MM），**千万不要自己推算明天/后天/下周对应哪一天**（系统按真实今天解析）；\"尽快/马上/今天内\"→today、\"这周/周末前\"→weekend、\"下周\"→nextweek、\"月底前\"→monthend；确属无压力日常事项才 due 留空串；prio 缺省 mid；一个事项对应一个任务，多步骤拆多个（children 放子任务）。没有这类带时间事项就**不要**输出该标记；普通咨询/解答问题不要凭空建任务。\n另外：如果用户要求\"修改/调整某任务的截止时间\"或你给某个任务建议了截止时间（如\"把去湖南的截止时间改成明天晚上7点半\"），不要建任务，而是输出隐藏标记：<!--UPDATEDUE:{\"text\":\"任务名\",\"due\":\"<相对词或日期>\"}-->；如果是\"提前/推迟 N 天/周/月\"（相对任务现有截止调整），不要填 due，而是填 shiftDays/shiftWeeks/shiftMonths（有符号整数，提前为负、推迟为正：\"提前一个月\"→{\"shiftMonths\":-1}、\"推迟一周\"→{\"shiftWeeks\":1}、\"提前3天\"→{\"shiftDays\":-3}）；若给了绝对日期则用 due。text 用任务名，due 用上述同一套相对词规则；找不到匹配任务就口头说明找不到。\n另外：如果用户要求\"导出\"数据（如：导出昨天的所有数据、导出本周的数据），不要建任务，而是输出隐藏标记：<!--ACTION:{\"action\":\"export\",\"start\":\"YYYY-MM-DD\",\"end\":\"YYYY-MM-DD\",\"field\":\"due\",\"name\":\"简短中文说明\"}-->。规则：start/end 为闭区间日期范围（\"昨天\"=昨天到昨天、\"今天\"=今天、\"本周\"=本周一到今天、\"本月\"=月初到今天、\"最近7天\"=7天前到今天）；field 可选 due(截止)/completedAt(完成)/created(创建)/any(截止·完成·创建任一落到范围内；例如用户说\"包括今天完成的/今天的所有数据\"时用 any)，默认 due；name 用简短中文。除导出指令外不要输出该标记。\n另外：如果用户的话是在要求改变某个任务的状态（如：把测试任务三标记完成、帮我完成买菜、作业做完了给它勾上、把X取消完成/恢复为待办、X没做完标一下），不要建任务也不要改截止时间，而是输出隐藏标记：<!--SETSTATUS:{\"text\":\"任务名\",\"status\":\"done|todo|fail\"}-->；status 只能是 done(标记为已完成)/todo(改回进行中待办)/fail(标记为未完成)；text 用用户原话里的任务叫法（系统会模糊匹配，找不到匹配任务就口头说明，不要编造）；一次处理多个任务就输出多个该标记；除状态变更外不要输出该标记。";
 function taskStatus(t) { return t.status === "done" ? "已完成" : t.status === "fail" ? "未完成" : "进行中"; }
 function taskPer(t) { return t.period === "week" ? "周" : t.period === "month" ? "月" : "日"; }
 function taskDue(t) { return t.due ? ("截止 " + t.due.replace("T", " ")) : "无截止"; }
@@ -1864,8 +1864,17 @@ async function askDeepSeek() {
   const q = $("#dsQ").value.trim();
   const ans = $("#dsAns");
   const btn = $("#dsAsk");
-  if (!key) { ans.innerHTML = '<div class="ds-msg ds-a" style="color:var(--danger)">请先填写 DeepSeek API Key（在「设置 → DeepSeek」里填写）。你可以在 <a href="https://platform.deepseek.com/usage" target="_blank" rel="noopener">DeepSeek 平台用量页</a> 查看用量或获取 Key。</div>'; return; }
   if (!q) { ans.textContent = "请先输入问题"; return; }
+  // 本地指令：像「把测试任务三标记完成」这类话直接执行，不请求 AI（无需 API Key、零延迟）
+  const localMsg = runLocalCommand(q);
+  if (localMsg) {
+    $("#dsQ").value = "";
+    dsHistory.push({ role: "user", content: q });
+    dsHistory.push({ role: "assistant", content: localMsg });
+    ans.innerHTML = '<div class="ds-msg ds-q">' + renderMarkdown(q) + '</div><div class="ds-msg ds-a">' + escapeHtml(localMsg) + '</div>';
+    return;
+  }
+  if (!key) { ans.innerHTML = '<div class="ds-msg ds-a" style="color:var(--danger)">请先填写 DeepSeek API Key（在「设置 → DeepSeek」里填写）。你可以在 <a href="https://platform.deepseek.com/usage" target="_blank" rel="noopener">DeepSeek 平台用量页</a> 查看用量或获取 Key。</div>'; return; }
   try { localStorage.setItem("dsKey", key); } catch (e) {}
   $("#dsQ").value = ""; // 提问后清空输入框
   const qHtml = '<div class="ds-msg ds-q">' + renderMarkdown(q) + '</div>';
@@ -1882,7 +1891,7 @@ async function askDeepSeek() {
     const reader = r.body.getReader();
     const decoder = new TextDecoder();
     let full = "", buffer = "";
-    const stripTasks = (s) => String(s).replace(/<!--(?:TASKS|ACTION|UPDATEDUE):[\s\S]*?(?:-->|$)/g, "");
+    const stripTasks = (s) => String(s).replace(/<!--(?:TASKS|ACTION|UPDATEDUE|SETSTATUS):[\s\S]*?(?:-->|$)/g, "");
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
@@ -1943,6 +1952,19 @@ async function askDeepSeek() {
           }
         }
       }
+      // 若 AI 输出状态变更指令（如：把测试任务三标记完成），找到对应任务并执行
+      let sm;
+      const smRe = /<!--SETSTATUS:([\s\S]*?)-->/g;
+      while ((sm = smRe.exec(full))) {
+        let sp = null;
+        try { sp = JSON.parse(sm[1]); } catch (e) {}
+        if (sp && sp.text && ["done", "todo", "fail"].indexOf(sp.status) >= 0) {
+          const hits = findTasksByName(sp.text);
+          if (!hits.length) { toast("未找到任务「" + sp.text + "」"); continue; }
+          const msg = applyStatusChange(hits, sp.status);
+          if (msg) toast(msg);
+        }
+      }
     }
   } catch (e) {
     dsHistory.pop();
@@ -1952,6 +1974,114 @@ async function askDeepSeek() {
 function clearDsConversation() {
   dsHistory = [];
   $("#dsAns").textContent = "";
+}
+
+// ============ 提问本地指令：像「把测试任务三标记完成」直接执行，无需 AI ============
+// 汉字数字→阿拉伯数字（一~九十九），让「任务三」能匹配「任务3」
+function cnDigits(s) {
+  const D = { "零": 0, "一": 1, "二": 2, "两": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9 };
+  return String(s).replace(/[零一二两三四五六七八九十]{1,3}/g, m => {
+    if (m.indexOf("十") < 0) { let out = ""; for (const c of m) out += D[c]; return out; }
+    const seg = m.split("十");
+    const tens = seg[0] ? D[seg[0][seg[0].length - 1]] : 1;
+    const ones = seg[1] ? D[seg[1][seg[1].length - 1]] : 0;
+    return String(tens * 10 + (ones || 0));
+  });
+}
+// 指令匹配用归一化：小写、去空白标点、汉字数字转阿拉伯
+function normCmdText(s) { return cnDigits(String(s || "").toLowerCase()).replace(/[^\w\u4e00-\u9fa5]+/g, ""); }
+// 按名称找任务（含子任务）：精确同名优先（同名几条就全中）；模糊匹配只在唯一命中时执行，多个不同名视为歧义返回空
+function findTasksByName(name, exactOnly) {
+  const q = normCmdText(name);
+  if (!q) return [];
+  const norm = t => normCmdText(t.text);
+  const exact = state.tasks.filter(t => norm(t) === q);
+  if (exact.length) return exact;
+  if (exactOnly || q.length < 2) return [];
+  const cands = state.tasks.filter(t => { const n = norm(t); return n.length > 1 && (n.indexOf(q) >= 0 || q.indexOf(n) >= 0); });
+  return cands.length === 1 ? cands : [];
+}
+// 批量变更状态并返回给用户看的确认文案（done=已完成 todo=恢复进行中 fail=未完成）
+function applyStatusChange(hits, status) {
+  if (!hits || !hits.length) return "";
+  const names = hits.map(h => "「" + h.text + "」").join("、");
+  if (status === "done") {
+    let ok = 0, already = 0, blocked = 0;
+    hits.forEach(h => {
+      if (h.status === "done") { already++; return; }
+      const kids = childrenOf(h.id);
+      if (kids.length && kids.some(k => k.status !== "done")) { blocked++; return; }
+      markDone(h.id); ok++;
+    });
+    if (ok) return "✅ 已把 " + names + " 标记为已完成";
+    if (blocked) return "⚠️ " + names + " 还有未完成的子任务，先完成子任务后再标记";
+    return "ℹ️ " + names + " 本来就已是完成状态";
+  }
+  if (status === "fail") {
+    const cand = hits.filter(h => h.status !== "fail");
+    if (!cand.length) return "ℹ️ " + names + " 已是未完成状态";
+    cand.forEach(h => markFail(h.id));
+    return "🟣 已把 " + names + " 标记为未完成并隐藏（可点「撤销」找回）";
+  }
+  const cand = hits.filter(h => h.status !== "todo");
+  if (!cand.length) return "ℹ️ " + names + " 目前就是进行中状态";
+  cand.forEach(h => { applyStatus(h, "todo"); h.hidden = false; if (h.parentId != null) maybeAutoComplete(h.parentId); });
+  save(); render(); sfx("open");
+  return "↩️ 已把 " + names + " 恢复为进行中";
+}
+// 识别「把XX标记完成」式指令并直接执行；命中返回确认文案，否则返回 ""（继续走 AI 提问）
+function runLocalCommand(raw) {
+  const text = String(raw || "").trim();
+  if (!text || text.length > 80) return "";
+  const t = text.replace(/[。．.！!？?~～\s]+$/g, "");
+  const rules = [
+    // —— 显式说法（语义无歧义，优先）——
+    // 完成（把/将 同义）
+    [/^(?:把|将)(.+?)标记(?:为|成)?(?:已完成|完成|做完|办完|搞完)$/, "done"],
+    [/^(?:把|将)(.+?)设(?:置)?为(?:已完成|完成)$/, "done"],
+    [/^(?:把|将)(.+?)(?:勾选|打勾)(?:上|了)?$/, "done"],
+    [/^(?:标记|设为|设成)(.+?)(?:为|成)?(?:已完成|完成|做完)$/, "done"],
+    [/^(?:完成|做完|办完|搞完)(.+?)(?:这个任务|该任务)?$/, "done"],
+    // 恢复进行中 / 取消完成（必须排在「…完成」宽松规则之前，避免「把X取消完成」被当成完成X）
+    [/^(?:把|将)(.+?)(?:标记|设)(?:为|成)?(?:进行中|待办)$/, "todo"],
+    [/^(?:把|将)(.+?)(?:取消完成|撤销完成|取消勾选|取消打勾|去掉勾选|恢复(?:为|成)?(?:待办|进行中))$/, "todo"],
+    [/^取消完成(.+)$/, "todo"],
+    // 标记未完成（本应用「未完成」= fail 状态，附原因、可撤销）
+    [/^(?:把|将)(.+?)标记(?:为|成)?未完成$/, "fail"],
+    [/^(?:把|将)(.+?)设(?:置)?为未完成$/, "fail"],
+    // 删除（仅精确同名才执行，防误删）
+    [/^(?:把|将)(.+?)删除(?:掉|了)?$/, "del"],
+    [/^(?:删除|删掉|删了)(.+?)(?:这个任务|该任务)?$/, "del"],
+    // —— 宽松兜底（更随意的说法；未完成/取消类要先于完成类，避免「X没做完」被当成完成）——
+    [/^(.+?)未完成了$/, "fail"],
+    [/^(.+?)没(?:有)?(?:做完|办完|完成|做|办|完|成)$/, "fail"],
+    [/^(.+?)(?:取消完成|撤销完成|取消勾选|取消打勾)$/, "todo"],
+    [/^(.+?)(?:已经)?做完了?$/, "done"],
+    [/^(.+?)完成了$/, "done"],
+    [/^(.+?)(?:打勾|勾选)$/, "done"],
+    [/^(?:把|将)(.+?)(?:给)?完成了?$/, "done"],
+    [/^(.+?)删除(?:掉|了)$/, "del"]
+  ];
+  for (const [re, act] of rules) {
+    const m = t.match(re);
+    if (!m) continue;
+    // 清理任务名里混进的口语修饰（这个/那个、…的任务、这件事等），但不动「测试任务」这类本名
+    let target = String(m[1] || "").trim()
+      .replace(/^(?:那个|这个|该)/, "")
+      .replace(/(?:这件事|这事|的事项|一下)+$/, "")
+      .replace(/(?:的|这个|那个|该)任务$/, "")
+      .replace(/的$/, "");
+    if (!target) return "";
+    const hits = findTasksByName(target, act === "del");
+    if (!hits.length) return ""; // 没找到对应任务 → 当普通问题交给 AI
+    if (act === "del") {
+      const names = hits.map(h => "「" + h.text + "」").join("、");
+      hits.forEach(h => deleteTask(h.id));
+      return "🗑️ 已删除 " + names + "（3 天内可在垃圾站恢复）";
+    }
+    return applyStatusChange(hits, act);
+  }
+  return "";
 }
 
 // ---------- AI 一句话建任务 ----------
@@ -2087,6 +2217,12 @@ async function aiCreateTasks() {
   const input = $("#dsQ");
   const text = input.value.trim();
   if (!text) { toast("请先输入想让 AI 创建的任务"); return; }
+  // 本地指令优先：在「建任务」模式里说「把XX标记完成」也直接执行，避免误建成新任务
+  const lm = runLocalCommand(text);
+  if (lm) {
+    $("#dsAns").innerHTML = '<div class="ds-msg ds-q">' + renderMarkdown(text) + '</div><div class="ds-msg ds-a">' + escapeHtml(lm) + '</div>';
+    input.value = ""; return;
+  }
   const key = (localStorage.getItem("dsKey") || "").trim();
   if (!key) { toast("请先填写 DeepSeek API Key（在「设置 → DeepSeek」里），可前往 https://platform.deepseek.com/usage 查看用量或获取 Key"); return; }
   const btn = $("#dsAsk");
@@ -2096,7 +2232,7 @@ async function aiCreateTasks() {
   btn.disabled = true; const orig = btn.textContent; btn.textContent = "AI 生成中…";
   const qHtml = '<div class="ds-msg ds-q">' + renderMarkdown(text) + '</div>';
   ans.innerHTML = qHtml + '<div class="ds-msg ds-a">正在生成任务…</div>';
-  const stripTasks = (s) => String(s).replace(/<!--(?:TASKS|UPDATEDUE):[\s\S]*?(?:-->|$)/g, "");
+  const stripTasks = (s) => String(s).replace(/<!--(?:TASKS|UPDATEDUE|SETSTATUS):[\s\S]*?(?:-->|$)/g, "");
   try {
     const r = await fetch("https://api.deepseek.com/chat/completions", {
       method: "POST",
@@ -3497,7 +3633,7 @@ function bind() {
     dsMode = mode;
     const isChat = mode === "chat";
     $("#dsAsk").textContent = isChat ? "提问" : "✨ AI 创建";
-    $("#dsQ").placeholder = isChat ? "问点什么… 例：我今天有哪些待办？有多少未完成？下周有什么？" : "一句话建任务，如：明天下午3点和同事开会";
+    $("#dsQ").placeholder = isChat ? "问点什么… 例：我今天有哪些待办？有多少未完成？也可以直接说「把测试任务三标记完成」" : "一句话建任务，如：明天下午3点和同事开会";
     $$("#dsMode .ds-mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === mode));
   }
   $$("#dsMode .ds-mode-btn").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); setDsMode(b.dataset.mode); }));
