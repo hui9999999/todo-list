@@ -108,8 +108,19 @@ async function loadWeather(){
 }
 async function retryWeather(){if(!userSettings.value)await loadSettings();else await loadWeather();}
 function isDue(task:Task){return ['todo','doing'].includes(task.status) && !task.deleted_at && Boolean((task.due_date && task.due_date<=day.value) || (task.due_at && new Date(task.due_at).getTime()<=Date.now()));}
+// Reminder keys are day-scoped; drop other days so storage stays bounded by today's tasks.
+function pruneDueReminderKeys(){
+  const prefix=`todo-due:${auth.user?.id}:`, keep=`:${day.value}`;
+  for(const key of notifiedKeys)if(!key.endsWith(keep))notifiedKeys.delete(key);
+  try{
+    const stale:string[]=[];
+    for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(key&&key.startsWith(prefix)&&!key.endsWith(keep))stale.push(key);}
+    for(const key of stale)localStorage.removeItem(key);
+  }catch{/* Storage may be unavailable. */}
+}
 async function notifyDue(){
   if(!userSettings.value?.notifications_enabled)return;
+  pruneDueReminderKeys();
   dueReminders.value=dueReminders.value.map(row=>tasks.items.find(task=>task.id===row.id)).filter((task):task is Task=>Boolean(task && isDue(task)));
   const fresh:Task[]=[];
   for(const task of tasks.items){

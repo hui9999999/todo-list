@@ -148,7 +148,9 @@ function subscribe() {
       if (source !== stream) return;
       const msg = event as MessageEvent;
       if (!msg.data) return;
-      const data=JSON.parse(msg.data);
+      // One malformed frame must not throw inside the listener and kill the stream.
+      let data: any;
+      try { data = JSON.parse(msg.data); } catch { return; }
       cursor=Math.max(cursor, Number(msg.lastEventId)||0);
       if (kind==='answer_delta') {readingData.value=false;liveAnswer.value += data.text;}
       if (kind==='tool_result' && data.kind==='read_data') {liveAnswer.value='';readingData.value=true;}

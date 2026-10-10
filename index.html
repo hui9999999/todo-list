@@ -1248,7 +1248,7 @@
           <summary>DeepSeek</summary>
           <div class="setting col">
             <span>DeepSeek API Key</span>
-            <input type="password" id="dsKey" placeholder="输入 DeepSeek API Key" autocomplete="off" />
+            <input type="password" id="dsKey" placeholder="输入 DeepSeek API Key（仅本次打开期间保留，不长期保存）" autocomplete="off" />
           </div>
         </details>
         <details class="setting-group">
@@ -2778,7 +2778,7 @@ async function askDeepSeek() {
     return;
   }
   if (!key) { ans.innerHTML = '<div class="ds-msg ds-a" style="color:var(--danger)">请先填写 DeepSeek API Key（在「设置 → DeepSeek」里填写）。你可以在 <a href="https://platform.deepseek.com/usage" target="_blank" rel="noopener">DeepSeek 平台用量页</a> 查看用量或获取 Key。</div>'; return; }
-  try { localStorage.setItem("dsKey", key); } catch (e) {}
+  // Key 只保留在输入框内存中，不写入 localStorage，避免被同源脚本读取
   $("#dsQ").value = ""; // 提问后清空输入框
   const qHtml = '<div class="ds-msg ds-q">' + renderMarkdown(q) + '</div>';
   ans.innerHTML = qHtml + '<div class="ds-msg ds-a"></div>'; // 问题写入下方，答案随后流式追加
@@ -3132,7 +3132,7 @@ async function aiCreateTasks() {
     $("#dsAns").innerHTML = '<div class="ds-msg ds-q">' + renderMarkdown(text) + '</div><div class="ds-msg ds-a">' + escapeHtml(lm) + '</div>';
     input.value = ""; return;
   }
-  const key = (localStorage.getItem("dsKey") || "").trim();
+  const key = $("#dsKey").value.trim();
   if (!key) { toast("请先填写 DeepSeek API Key（在「设置 → DeepSeek」里），可前往 https://platform.deepseek.com/usage 查看用量或获取 Key"); return; }
   const btn = $("#dsAsk");
   const ans = $("#dsAns");
@@ -4844,7 +4844,8 @@ function bind() {
   $$("#dsMode .ds-mode-btn").forEach(b => b.addEventListener("click", e => { e.stopPropagation(); setDsMode(b.dataset.mode); }));
   $("#dsQ").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); if (dsMode === "create") aiCreateTasks(); else askDeepSeek(); } });
   setDsMode("chat");
-  try { const k = localStorage.getItem("dsKey"); if (k) $("#dsKey").value = k; } catch (e) {}
+  // 清理历史版本遗留在 localStorage 里的 Key；现在 Key 仅在会话内保留
+  try { localStorage.removeItem("dsKey"); } catch (e) {}
 }
 
 // ============ 启动 ============
