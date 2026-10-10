@@ -8,6 +8,7 @@ import {useTasks} from '../stores/tasks';
 import {useRoute, useRouter} from 'vue-router';
 import type {Settings, Connection, Preference, Usage, Job} from '../advanced-types';
 import {applyTheme,settingKeys} from '../themes';
+import {timezoneOptions, defaultTimezone} from '../timezones';
 import type {AccountProfile} from '../types';
 import {weatherCityGroups} from '../weather-cities';
 import DesktopPetSettings from './DesktopPetSettings.vue';
@@ -79,7 +80,7 @@ async function load(initial=false){
     Promise.allSettled([api<Usage>('/usage'),api<Job[]>('/jobs'),api<typeof searchService.value>('/embedding-service')]),
   ]);
   const preferences=props.appearance && props.appearance.version > result[0].version ? props.appearance : result[0];
-  if(initial || !form.value)form.value={...preferences};
+  if(initial || !form.value)form.value={...preferences,timezone:preferences.timezone || defaultTimezone};
   connections.value=result[1];
   currentModel.value=result[2];
   if(initial || !connections.value.some(c=>c.enabled && c.id===modelForm.value.connection_id)){
@@ -99,6 +100,8 @@ async function save(){await act(async()=>{
   form.value=await api<Settings>('/settings',{method:'PUT',body:JSON.stringify(payload)});
   if(auth.user)auth.user.timezone=form.value.timezone; applyTheme(form.value.theme);emit('saved',form.value);ElMessage.success('设置已保存');
 });}
+// Selecting a theme applies it immediately; 保存设置 persists it to the account.
+function previewTheme(){if(form.value)applyTheme(form.value.theme);}
 async function catalog(){await act(async()=>{const result=await api<{models:{id:string;name:string;purpose?:string}[];refreshed_at:string|null;error:string|null}>('/provider-connections/'+modelForm.value.connection_id+'/models?refresh=true');models.value=result.models.filter(m=>!m.purpose || m.purpose==='chat');modelStatus.value=result.error || '模型列表已更新';});}
 async function enableModel(){await act(async()=>{
   modelStatus.value='';modelError.value='';
@@ -178,8 +181,8 @@ watch(()=>props.appearance,settings=>{
   <form v-if="form && tab==='preferences'" @submit.prevent="save" class="feature-section preferences-form">
     <header class="preferences-heading"><h2>偏好设置</h2><el-button type="primary" native-type="submit" :loading="busy" :disabled="busy">保存设置</el-button></header>
     <section class="preference-section" aria-labelledby="preference-display"><h3 id="preference-display">显示与地区</h3><div class="preference-fields preference-fields-pair">
-      <label>主题<el-select v-model="form.theme" aria-label="主题"><el-option label="浅色" value="light"/><el-option label="夜间" value="dark"/><el-option label="暖色" value="warm"/></el-select></label>
-      <label>时区<el-input v-model="form.timezone" aria-label="账户时区"/></label>
+      <label>主题<el-select v-model="form.theme" aria-label="主题" @change="previewTheme"><el-option label="浅色" value="light"/><el-option label="夜间" value="dark"/><el-option label="暖色" value="warm"/></el-select></label>
+      <label>时区<el-select v-model="form.timezone" aria-label="账户时区" filterable default-first-option placeholder="选择时区，默认为中国标准时间"><el-option v-for="zone in timezoneOptions" :key="zone" :label="zone" :value="zone"/></el-select></label>
     </div></section>
     <section class="preference-section" aria-labelledby="preference-schedule"><h3 id="preference-schedule">工作时间</h3><div class="preference-fields">
       <div class="preference-fields-pair">
