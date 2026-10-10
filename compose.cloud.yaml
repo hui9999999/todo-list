@@ -78,14 +78,29 @@ services:
     environment:
       <<: *application-env
       WORKER_DISCOVERY_DATABASE_URL: ${WORKER_DISCOVERY_DATABASE_URL:?Configure discovery URL}
+    healthcheck:
+      # The worker touches .runtime/worker-heartbeat at least once a minute.
+      test: ["CMD", "python", "-c", "import os,time,sys; p='.runtime/worker-heartbeat'; sys.exit(0 if os.path.exists(p) and time.time()-os.path.getmtime(p)<360 else 1)"]
+      interval: 60s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
   web:
     image: caddy:2-alpine
     restart: unless-stopped
+    # Unprivileged uid/gid; the Caddyfile listens on 8080 so no bind caps are needed.
+    user: "100:101"
     ports:
-      - '${WEB_PORT:-8080}:80'
+      - '${WEB_PORT:-8080}:8080'
     volumes:
       - ./frontend/dist:/srv:ro
       - ./deploy/Caddyfile.cloud:/etc/caddy/Caddyfile:ro
+    healthcheck:
+      # Caddy's local admin endpoint answers only while a config is loaded.
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:2019/config"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
     depends_on:
       api:
         condition: service_healthy

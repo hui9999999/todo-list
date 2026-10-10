@@ -67,15 +67,29 @@ services:
     environment:
       <<: *application-env
       WORKER_DISCOVERY_DATABASE_URL: ${WORKER_DISCOVERY_DATABASE_URL:?Configure read-only discovery DSN}
+    healthcheck:
+      # The worker touches .runtime/worker-heartbeat at least once a minute.
+      test: ["CMD", "python", "-c", "import os,time,sys; p='.runtime/worker-heartbeat'; sys.exit(0 if os.path.exists(p) and time.time()-os.path.getmtime(p)<360 else 1)"]
+      interval: 60s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
   web:
     build: ./frontend
     restart: unless-stopped
     environment:
       SITE_DOMAIN: ${SITE_DOMAIN}
+    # Root is required to bind 80/443 and write TLS certs into caddy-data.
     ports: ["80:80", "443:443", "443:443/udp"]
     volumes:
       - caddy-data:/data
       - caddy-config:/config
+    healthcheck:
+      # Caddy's local admin endpoint answers only while a config is loaded.
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:2019/config"]
+      interval: 30s
+      timeout: 5s
+      retries: 10
     depends_on:
       api:
         condition: service_healthy
