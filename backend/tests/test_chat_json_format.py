@@ -306,3 +306,52 @@ def test_read_only_question_does_not_bypass_invalid_actions_or_claim_changes(acc
     info=client.get(PREFIX+'/agent-runs/'+run['id']).json()
     assert info['status']=='failed' and info['proposals']==[]
     assert client.get(PREFIX+'/tasks').json()[0]['version']==task['version']
+
+
+def streamed_deltas(client, run_id):
+    from app.advanced_models import RunEvent
+    with tenant_session(client.user_id) as db:
+        return list(db.scalars(select(RunEvent).where(
+            RunEvent.user_id == client.user_id, RunEvent.run_id == run_id,
+            RunEvent.kind == 'answer_delta').order_by(RunEvent.sequence)))
+
+
+def chunked_stream(chunks):
+    def respond(c, payload):
+        for index, chunk in enumerate(chunks):
+            yield {'choices': [{'delta': {'content': chunk},
+                                'finish_reason': 'stop' if index == len(chunks) - 1 else None}]}
+        yield {'choices': [], 'usage': {'prompt_tokens': 10, 'completion_tokens': 10}}
+    return respond
+
+
+def test_plain_chat_streams_answer_in_multiple_deltas(accounts, monkeypatch):
+    import app.agent as agent
+    client = accounts(); flash_connection(client)
+    answer = '这是第一段流式回答的内容，用于验证增量推送确实按小段到达客户端，而不是等全部生成完才展示。' * 2
+    chunks = [answer[i:i + 20] for i in range(0, len(answer), 20)]
+    monkeypatch.setattr(agent, 'stream_chat', chunked_stream(chunks))
+    _, run, _ = run_message(client, '随口聊聊今天的状态')
+    execute_agent(client.user_id, run['id'])
+    info = client.get(PREFIX + '/agent-runs/' + run['id']).json()
+    assert info['status'] == 'completed' and info['answer'] == answer
+    deltas = streamed_deltas(client, run['id'])
+    assert len(deltas) >= 2, '纯文本回答应按小段增量推送'
+    assert ''.join(d.payload['text'] for d in deltas) == answer
+
+
+def test_json_envelope_streams_decoded_answer_without_structure(accounts, monkeypatch):
+    import app.agent as agent
+    client = accounts(); flash_connection(client)
+    answer = '小狒按你的关注主题整理好了这条较长的回答，用于验证信封内的文本可以边生成边安全解码。' * 2
+    body = __import__('json').dumps({'answer': answer, 'followups': ['还需要我做什么吗？']}, ensure_ascii=False)
+    monkeypatch.setattr(agent, 'stream_chat', chunked_stream([body[i:i + 16] for i in range(0, len(body), 16)]))
+    _, run, _ = run_message(client, '今天有什么值得关注的')
+    execute_agent(client.user_id, run['id'])
+    info = client.get(PREFIX + '/agent-runs/' + run['id']).json()
+    assert info['status'] == 'completed' and info['answer'] == answer
+    deltas = streamed_deltas(client, run['id'])
+    assert deltas, '信封回答应在生成过程中增量解码'
+    assert ''.join(d.payload['text'] for d in deltas) == answer
+    assert all('{' not in d.payload['text'] and '"actions"' not in d.payload['text'] and 'followups' not in d.payload['text']
+               for d in deltas), '任何 JSON 结构字段都不能流出到界面'

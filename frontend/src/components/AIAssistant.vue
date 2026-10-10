@@ -165,6 +165,28 @@ function subscribe() {
     });
   }
 }
+// Native WebView has no cross-origin EventSource; polling applies the same event
+// frames so partial answers stream in while the run is still executing.
+function applyEventFrames(frames: string) {
+  for (const frame of frames.split(/\r?\n\r?\n/)) {
+    const kind = frame.match(/^event: (.+)$/m)?.[1];
+    const payload = frame.match(/^data: (.+)$/m)?.[1];
+    if (!payload) continue;
+    try {
+      const data = JSON.parse(payload);
+      cursor = Math.max(cursor, Number(frame.match(/^id: (\d+)$/m)?.[1]) || 0);
+      if (kind === 'answer_delta') {readingData.value=false;liveAnswer.value += data.text;}
+      if (kind === 'tool_result' && data.kind==='read_data') {liveAnswer.value='';readingData.value=true;}
+      if (kind === 'web_search') {searchingWeb.value=data.state==='searching';if(searchingWeb.value){liveAnswer.value='';readingData.value=false;}}
+      if (kind === 'followups') followups.value = data.questions;
+      if (kind === 'citations') citations.value = data.sources;
+    } catch { /* Skip a malformed frame; the status endpoint remains authoritative. */ }
+  }
+}
+async function fetchNewEvents(id: string) {
+  const response = await apiResponse('/agent-runs/'+id+'/events?after='+cursor);
+  if (response.ok && run.value?.id === id) applyEventFrames(await response.text());
+}
 async function checkRunStatus() {
   if (checkingStatus || !run.value || !['pending','running'].includes(run.value.status)) return;
   const id = run.value.id;
@@ -178,22 +200,11 @@ async function checkRunStatus() {
       stream?.close(); stream=null;
       run.value=latest; proposal.value=latest.proposals?.at(-1) || null;
       if (nativeApp) {
-        try {
-          const response = await apiResponse('/agent-runs/'+id+'/events?after='+cursor);
-          if (response.ok && run.value?.id === id) {
-            for (const frame of (await response.text()).split(/\r?\n\r?\n/)) {
-              const kind = frame.match(/^event: (.+)$/m)?.[1];
-              const payload = frame.match(/^data: (.+)$/m)?.[1];
-              if (!payload) continue;
-              const data = JSON.parse(payload);
-              cursor = Math.max(cursor, Number(frame.match(/^id: (\d+)$/m)?.[1]) || 0);
-              if (kind === 'followups') followups.value = data.questions;
-              if (kind === 'citations') citations.value = data.sources;
-            }
-          }
-        } catch { /* The answer and proposal remain available from the status endpoint. */ }
+        try { await fetchNewEvents(id); } catch { /* The answer and proposal remain available from the status endpoint. */ }
       }
       await load(); liveAnswer.value='';
+    } else if (nativeApp) {
+      try { await fetchNewEvents(id); } catch { /* Retry on the next tick. */ }
     }
   } catch { /* EventSource reconnects; the next status check retries. */ }
   finally {checkingStatus=false;}

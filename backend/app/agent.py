@@ -78,6 +78,33 @@ def json_answer_prefix(content):
         return None
 
 
+def json_answer_partial(content):
+    """Decode the still-open answer field of a streaming JSON envelope.
+
+    Returns the longest safely decodable string prefix so partial answers can be
+    pushed while the model is writing; never returns raw JSON syntax."""
+    prefix = re.match(r'^\s*\{\s*"answer"\s*:\s*"', content)
+    if not prefix:
+        return None
+    body = content[prefix.end():]
+    cut, run = len(body), 0
+    while cut - 1 - run >= 0 and body[cut - 1 - run] == '\\':
+        run += 1
+    if run % 2:
+        cut -= 1  # never split an escape sequence
+    if not cut:
+        return None
+    try:
+        value, _ = json.JSONDecoder().raw_decode('"' + body[:cut] + '"')
+    except ValueError:
+        return None
+    if not isinstance(value, str) or '\ud800' <= value[-1:] <= '\udbff':
+        return None
+    if READ_QUERY_SUFFIX.search(value):
+        return None  # 只读请求出现后不再流式，完成时按解析结果整体展示
+    return value
+
+
 def validate_structured_output(data):
     """Remove a redundant deadline date only when the exact local date agrees."""
     if isinstance(data, dict) and set(data) in ({'queries'}, {'web_search'}) and next(iter(data.values())):
@@ -697,7 +724,7 @@ def execute_agent(user_id, run_id):
                 '系统已按本轮天气问题读取专门天气服务，以下为当前实况，不是全天或未来预报。直接依据城市、温度、天气及观测时间回答；成功返回source时引用[网页1]，失败时没有可引用来源。不能编造未返回的风力、降雨概率或后续天气。不要再通过web_search找天气，也不要回复旧垃圾站话题。若读取失败，只说明该城市实况暂时无法获取，不拿无关网页代替，不猜测实时天气。' + json.dumps(weather_evidence,ensure_ascii=False)})
         explicit_web = bool(re.search(r'联网|上网|网上.{0,12}(?:搜|查)|(?:搜索|搜一下|查一下).{0,50}(?:官方|新闻|最新|网页|网站|教程|资料)', message.content))
         for round_index in range(4):
-            calls, answer, complete, streamed_json_answer = {}, '', False, None
+            calls, answer, complete, streamed_answer = {}, '', False, None
             for packet in stream_chat(connection, payload):
                 if time.monotonic() - started > 180:
                     raise HTTPException(504, '运行超时，请减少输入后重试')
@@ -720,17 +747,45 @@ def execute_agent(user_id, run_id):
                             answer += chunk
                             if len(answer) > 20000:
                                 raise HTTPException(502, '回复超过长度限制')
-                            if not tools_ok and not web_enabled and streamed_json_answer is None:
-                                first_answer = json_answer_prefix(answer)
-                                if first_answer is not None:
-                                    streamed_json_answer = first_answer
-                                    append_event(db, run, 'answer_delta', {'text': first_answer})
                         for call in delta.get('tool_calls', []):
                             entry = calls.setdefault(call.get('index', 0), {'name': '', 'arguments': ''})
                             entry['name'] += call.get('function', {}).get('name', '')
                             entry['arguments'] += call.get('function', {}).get('arguments', '')
                             if len(entry['arguments']) > 60000:
                                 raise HTTPException(502, '提案超过长度限制')
+                    # 纯聊天（无工具、未联网）边生成边推送：JSON 信封用增量解码的
+                    # answer 字段前缀，普通文本直接推送；结构字段永远不会流出。
+                    if not tools_ok and not web_enabled:
+                        stripped = answer.lstrip()
+                        if stripped.startswith('{'):
+                            shown = json_answer_partial(answer)
+                        elif stripped and not stripped.startswith(('[', '```')):
+                            # 普通文本推送到第一个 '{' 为止：其后可能是嵌入的只读查询
+                            # JSON，任何结构片段都不能流出；完成时按解析结果整体替换。
+                            shown = answer.split('{', 1)[0].rstrip()
+                        else:
+                            shown = None
+                        if shown is not None:
+                            if streamed_answer is None:
+                                # 首段立即可见，让用户尽早看到回答开始；后续按小段节流。
+                                streamed_answer = shown
+                                append_event(db, run, 'answer_delta', {'text': shown})
+                            elif len(shown) >= len(streamed_answer) + 24:
+                                append_event(db, run, 'answer_delta', {'text': shown[len(streamed_answer):]})
+                                streamed_answer = shown
+            if complete and streamed_answer is not None and streamed_answer != answer:
+                stripped = answer.lstrip()
+                if stripped.startswith('{'):
+                    shown = json_answer_prefix(answer)
+                elif stripped and not stripped.startswith(('[', '```')):
+                    shown = answer.split('{', 1)[0].rstrip()
+                else:
+                    shown = None
+                if shown is not None and len(shown) > len(streamed_answer):
+                    with tenant_session(user_id) as db:
+                        run = guarded_run(db, user_id, run_id)
+                        append_event(db, run, 'answer_delta', {'text': shown[len(streamed_answer):]})
+                        streamed_answer = shown
             if not complete:
                 raise HTTPException(502, '流未完整结束，未创建提案')
             if not calls and not answer.strip():
@@ -743,8 +798,10 @@ def execute_agent(user_id, run_id):
             else:
                 output = parse_model_output(answer, evidence_message.content,
                     allow_plain_chat=tools_ok or connection.provider == 'deepseek' and model == 'deepseek-flash')
-                if streamed_json_answer is not None and streamed_json_answer != output.answer:
-                    raise HTTPException(502, '回答字段不一致，未创建提案，请重试')
+                if streamed_answer is not None and streamed_answer != output.answer:
+                    # 提前流出的前缀与最终回答不一致（例如后来出现只读查询后缀）：
+                    # 不再信任已流出内容，完成事件后前端会用完整回答整体替换。
+                    streamed_answer = None
             with tenant_session(user_id) as db:
                 row = private_owned(db, UsageEvent, user_id, usage_id)
                 row.state = 'settled' if usage else 'unknown'
@@ -817,7 +874,7 @@ def execute_agent(user_id, run_id):
             run = guarded_run(db, user_id, run_id)
             user = db.get(User, user_id)
             run.answer = output.answer
-            if calls or streamed_json_answer is None:
+            if calls or streamed_answer is None:
                 append_event(db, run, 'answer_delta', {'text': output.answer})
             cards=[prepare_export(db,user,request) for request in output.exports]
             reply=Message(user_id=user_id, conversation_id=run.conversation_id, role='assistant', content=output.answer)
