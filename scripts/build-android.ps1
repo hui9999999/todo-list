@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$ApiOrigin = 'http://103.236.96.53:60673',
     [string]$JavaHome = '',
     [string]$AndroidSdk = '',

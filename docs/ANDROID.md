@@ -1,6 +1,6 @@
 # 安卓测试版
 
-最新版本：`0.1.7-test`（versionCode 8），[下载 APK](http://103.236.96.53:60673/downloads/xiaoqi-todo-android-0.1.7.apk)。签名与 v0.1.6 一致，可覆盖安装。专注页面稳定性、提示小字移除和账户历史分页已同步，详见 [2026-10-10 发布记录](releases/2026-10-10-account-focus.md)。
+最新版本：`0.1.8-test`（versionCode 9），[下载 APK](http://103.236.96.53:60673/downloads/xiaoqi-todo-android-0.1.8.apk)。签名与 v0.1.7 一致，可覆盖安装。设置页主题即时生效、中文时区选择已同步，详见 [2026-10-10 发布记录](releases/2026-10-10-settings-tz.md)。
 
 安卓 App 复用 `frontend/` 的 Vue 界面，使用 Capacitor 8。界面、菜品和小狒资源随 APK 安装，任务、账号和 AI 使用现有云端服务，需要联网。默认服务器为 `http://103.236.96.53:60673`。
 
@@ -60,3 +60,5 @@ HTTP 仅在 debug 网络配置中对现有服务器 IP 开放。正式版禁止�
 
 
 2026-10-09 更新：测试包提升为 `0.1.6-test`（versionCode 7），位于 `tmp/releases/android/assistant-data-latest/小狒待办-Android-测试版-v0.1.6.apk`。小狒可以按账号权限查询完整应用资料（含账号、隐藏任务、垃圾站、历史和对话）；在对话内导出账号资料 JSON、任务明细，以及周报和月报的 Excel/Word/PDF/CSV 文件。下载卡片随对话保存，安卓点击保存或分享调用系统面板；修复原生二进制接口返回 JSON 时的 Base64 解码，中文资料正确保留。密码、密钥和登录凭据排除，已遗忘资料及相关下载不恢复。13 项安卓生产构建原生分支检查通过，包括中文 JSON 导出与系统分享、已有报告和任务流程；APK 中 301 个资源与 `dist-android` 一致，包名和调试签名不变，可覆盖安装。APK SHA-256 为 `1ee4754315314554127c56dcf28cb8d5a713d8919937e25274423301d31b189c`，大小 27,234,892 字节。浏览器检查模拟原生接口，本次完整系统分享交互仍需手机安装验证。使用方式见 `docs/ASSISTANT-DATA.md`。
+
+2026-10-10 更新：测试包提升为 `0.1.8-test`（versionCode 9），位于 `tmp/releases/android/settings-tz-latest/xiaoqi-todo-android-0.1.8.apk`。设置页主题下拉即选即生效（保存后持久化）；时区改为可滚动、可搜索的中文下拉（babel/CLDR 生成 551 个中文名映射，支持"上海"等城市别名与 IANA ID 搜索，值仍为 IANA 串）。包含同期网页修复：AI 助手 SSE 帧解析守卫、到期提醒键按天清理。13 项安卓分支检查通过；APK 中 301 个前端资源与 `dist-android` 逐字节一致，签名一致可覆盖安装。APK SHA-256 为 `f4590c265a892ea0e9c09e47c7b2e4e28914d431ed5cea96e8d457fb52cbc641`，大小 26,454,432 字节。构建脚本补充 UTF-8 BOM 修复 PS 5.1 解析失败，详见发布记录。
