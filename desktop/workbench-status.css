@@ -1,0 +1,11 @@
+html { font: 16px/1.7 "Segoe UI", "Microsoft YaHei", sans-serif; color: #40392f; background: #faf7f0; }
+body { margin: 0; }
+main { max-width: 390px; margin: 16vh auto 0; padding: 28px; }
+.mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #826635; color: #fff; font-size: 24px; }
+.label { margin-top: 28px; color: #826635; font-size: 13px; }
+h1 { margin: 8px 0 16px; font-size: 25px; line-height: 1.4; }
+p { color: #786f63; }
+button { margin: 12px 0; padding: 11px 22px; font: inherit; color: #fff; background: #826635; border: 0; border-radius: 8px; cursor: pointer; }
+button:hover { background: #6d542c; }
+button:focus-visible { outline: 2px solid #826635; outline-offset: 4px; }
+.hint { font-size: 13px; }

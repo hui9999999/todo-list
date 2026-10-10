@@ -1,0 +1,11 @@
+.ai-download-card{margin:12px 0 0;padding:14px;border:1px solid var(--el-border-color);border-radius:12px;background:var(--el-bg-color);max-width:520px}
+.ai-download-card>div{display:flex;align-items:center;gap:9px}.ai-download-card>div>span{margin-left:auto;font-size:11px;color:var(--el-text-color-secondary)}
+.ai-download-card p{margin:8px 0 12px;font-size:13px;line-height:1.6;color:var(--el-text-color-secondary);overflow-wrap:anywhere}
+@media(max-width:700px){.ai-download-card{padding:12px;max-width:100%}.ai-download-card p{font-size:12px}}
+.ai-web-sources{margin-top:12px;padding-top:10px;border-top:1px solid var(--el-border-color);max-width:600px}
+.ai-web-sources>small{color:var(--el-text-color-secondary);font-size:12px}.ai-web-sources ol{margin:8px 0 0;padding-left:24px}
+.ai-web-sources li{padding:4px 0;color:var(--el-text-color-secondary);font-size:12px}.ai-web-sources a{display:block;color:var(--el-color-primary);text-decoration:none;overflow-wrap:anywhere}
+.ai-web-sources a:hover{text-decoration:underline}.ai-web-sources a small{display:block;color:var(--el-text-color-secondary);font-size:11px;margin-top:3px}
+.ai-composer-actions .ai-web-toggle{margin:0;padding:6px 9px;font-size:13px}.ai-web-toggle.is-on{color:var(--el-color-primary);background:var(--el-color-primary-light-9)}
+.ai-web-label-mobile{display:none}
+@media(max-width:700px){.ai-web-label-desktop{display:none}.ai-web-label-mobile{display:inline}.ai-composer-actions .ai-web-toggle{min-height:44px;padding:6px;flex-shrink:0}.ai-composer-actions .ai-web-toggle .el-icon{margin-right:3px}.ai-web-sources a{padding:3px 0}}

@@ -1,0 +1,5 @@
+.startup-status { max-width: 440px; margin: 15vh auto 0; padding: 28px; font: 16px/1.7 "Segoe UI", "Microsoft YaHei", sans-serif; color: var(--el-text-color-primary, #40392f); }
+.startup-status h1 { font-size: 25px; margin-bottom: 16px; }
+.startup-status p { color: var(--el-text-color-secondary, #786f63); }
+.startup-status button { padding: 11px 22px; background: var(--el-color-primary, #826635); color: var(--workbench-button-text, #fff); font: inherit; border: 0; border-radius: 8px; cursor: pointer; }
+.startup-status button:focus-visible { outline: 2px solid var(--el-color-primary, #826635); outline-offset: 4px; }

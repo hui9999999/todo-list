@@ -1,0 +1,10 @@
+html[data-native-app] {
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+html[data-native-app] body { overscroll-behavior-y: none; }
+html[data-native-app] .sidebar nav { scrollbar-width: none; }
+html[data-native-app] .sidebar nav::-webkit-scrollbar { display: none; }
+html[data-native-app] .el-dialog { max-width: calc(100vw - 24px); }
+html[data-native-app] .el-drawer { max-width: 100vw; }
+html[data-native-app] .bootstrap-error { padding: 28px; }

@@ -1,0 +1,86 @@
+name: ai-todo-production
+x-runtime: &runtime
+  build: ./backend
+  restart: unless-stopped
+  environment: &application-env
+    DATABASE_URL: ${DATABASE_URL:?Configure URL-encoded production app DSN}
+    APP_ORIGIN: https://${SITE_DOMAIN:?Configure the real domain}
+    COOKIE_SECURE: "true"
+    CREDENTIAL_MASTER_KEY: ${CREDENTIAL_MASTER_KEY:?Configure a Fernet key}
+    SYSTEM_EMBEDDING_API_KEY: ${SYSTEM_EMBEDDING_API_KEY:-}
+    SYSTEM_EMBEDDING_MODEL: ${SYSTEM_EMBEDDING_MODEL:-qwen3.7-text-embedding}
+    SYSTEM_EMBEDDING_REGION: ${SYSTEM_EMBEDDING_REGION:-cn}
+    SYSTEM_EMBEDDING_DIMENSIONS: ${SYSTEM_EMBEDDING_DIMENSIONS:-1024}
+    SMTP_HOST: ${SMTP_HOST:?Configure real SMTP}
+    SMTP_PORT: ${SMTP_PORT:-587}
+    SMTP_FROM: ${SMTP_FROM:?Configure sender}
+    SMTP_STARTTLS: "true"
+    SMTP_USERNAME: ${SMTP_USERNAME:?Configure SMTP username}
+    SMTP_PASSWORD: ${SMTP_PASSWORD:?Configure SMTP password}
+    ARTICLE_SOURCES_FILE: /app/article-sources.json
+    NEWS_SEARCH_PROVIDER: ${NEWS_SEARCH_PROVIDER:-free}
+    BOCHA_SEARCH_API_KEY: ${BOCHA_SEARCH_API_KEY:-}
+    BOCHA_SEARCH_KEY_FILE: ${BOCHA_SEARCH_KEY_FILE:-}
+    DELETION_JOURNAL_FILE: /app/.runtime/deletion-journal.json
+  volumes:
+    - todo-runtime:/app/.runtime
+  depends_on:
+    migrate:
+      condition: service_completed_successfully
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: todo_owner
+      POSTGRES_PASSWORD: ${OWNER_DATABASE_PASSWORD:?Configure owner password}
+      POSTGRES_DB: todo
+      APP_DATABASE_PASSWORD: ${APP_DATABASE_PASSWORD:?Configure app password}
+      DISCOVERY_DATABASE_PASSWORD: ${DISCOVERY_DATABASE_PASSWORD:?Configure discovery password}
+    volumes:
+      - todo-production-db:/var/lib/postgresql/data
+      - ./backend/db/production-init.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U todo_owner -d todo"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  migrate:
+    build: ./backend
+    command: ["python", "-m", "alembic", "upgrade", "head"]
+    environment:
+      MIGRATION_DATABASE_URL: ${MIGRATION_DATABASE_URL:?Configure owner DSN}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+  api:
+    <<: *runtime
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+  worker:
+    <<: *runtime
+    command: ["python", "-m", "app.worker"]
+    environment:
+      <<: *application-env
+      WORKER_DISCOVERY_DATABASE_URL: ${WORKER_DISCOVERY_DATABASE_URL:?Configure read-only discovery DSN}
+  web:
+    build: ./frontend
+    restart: unless-stopped
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN}
+    ports: ["80:80", "443:443", "443:443/udp"]
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  todo-production-db:
+  todo-runtime:
+  caddy-data:
+  caddy-config:

@@ -1,0 +1,1074 @@
+{
+  "generated_on": "2026-10-05",
+  "tool": "built-in image_gen.imagegen",
+  "style": "Warm ivory, realistic square editorial food photography",
+  "assets": [
+    {
+      "id": "baozi",
+      "file": "frontend/public/food/baozi.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-b25f8741-fae9-4f13-9f01-220dba2101cf.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese personal meal-planning app. Subject: 包子 Chinese steamed stuffed baozi, three soft white buns with neat pleated tops in a small bamboo steamer, one bun opened just enough to show appetizing pork-and-cabbage filling. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop, warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, entire steamer visible with generous safe space around its edge, food fills around 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark, no logos, no people or hands, no decorative unrelated ingredients."
+    },
+    {
+      "id": "mantou",
+      "file": "frontend/public/food/mantou.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-47bc1b5c-0980-418d-aa47-fd9cee4d11cc.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: 馒头 Chinese plain steamed mantou, three smooth oval white steamed bread buns with NO pleats and NO filling, on a small ivory ceramic plate, one torn to show fluffy airy bread inside. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "jiaozi",
+      "file": "frontend/public/food/jiaozi.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-c4c8b30b-f2fc-4deb-8bb0-a26c7a30352a.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: 饺子 Chinese boiled jiaozi, a plate of plump white crescent dumplings with realistic delicate folded edges, and a tiny dark ceramic saucer of black vinegar. Only a few finely chopped scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "noodles",
+      "file": "frontend/public/food/noodles.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-019538ab-6465-43fa-9680-81663aab814f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: 面条 Chinese breakfast noodle soup, a shallow ivory bowl filled with slender wheat noodles in clear amber broth, scallions and a few tender leafy greens, simple comforting breakfast, no pork slabs or decorative piles. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "congee",
+      "file": "frontend/public/food/congee.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-e87402cb-a720-4f6f-85d0-c91ab530e73d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese white rice congee 粥, comforting thick white porridge with softly visible rice grains in one ivory ceramic bowl, a tiny scattering of scallions, no lavish toppings. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "shouzhua",
+      "file": "frontend/public/food/shouzhua.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-377e3a4b-d15a-4a46-9214-52816208e5cf.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese hand-grab pancake 手抓饼, two golden pan-fried flaky flatbreads on an ivory plate, one partly pulled apart to reveal delicate layered crisp folds, no sandwich filling. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "jianbing",
+      "file": "frontend/public/food/jianbing.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-342fcad0-6ef7-41e5-b92f-a395eaaf7d87.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese jianbing guozi 煎饼果子, a folded thin egg crepe with black sesame and scallions, cut diagonally to reveal the crisp fried cracker and a thin layer of savory sauce inside, served on an ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "pepper-pork",
+      "file": "frontend/public/food/pepper-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-f4df358e-17fb-42a3-8e1f-4ee62724c2d6.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese Hunan stir-fried pork with green chilies 辣椒炒肉, thin browned pork slices and abundant vivid green chili pepper pieces with glossy savory sauce, on an ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "tomato-egg",
+      "file": "frontend/public/food/tomato-egg.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-5dea6d8c-ef90-47d8-a0d9-b9dc2039178d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese home-style tomato and scrambled egg 番茄炒蛋, juicy bright red tomato wedges and fluffy golden-yellow scrambled eggs lightly coated in tomato sauce, on an ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "potato-strips",
+      "file": "frontend/public/food/potato-strips.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-b876f3c6-c1df-480c-9608-761a897e775b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese stir-fried julienned potatoes 土豆丝, fine thin pale golden potato matchsticks with a few green pepper strips, crisp glossy texture, clearly potato strips not noodles, on an ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "kung-pao",
+      "file": "frontend/public/food/kung-pao.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-225f7b6c-58f4-42b4-963f-0b1d27ef5f75.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese kung pao chicken 宫保鸡丁, small browned diced chicken pieces with golden peanuts, scallion pieces and dried red chili peppers in glossy sauce, on an ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "mapo-tofu",
+      "file": "frontend/public/food/mapo-tofu.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-10cdf23c-22d1-4de9-a692-f65325a7f751.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese mapo tofu 麻婆豆腐, soft ivory tofu cubes in fragrant red chili sauce with finely minced pork and a small scattering of scallions, on a shallow ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients."
+    },
+    {
+      "id": "roujiamo",
+      "name": "肉夹馍",
+      "file": "frontend/public/food/roujiamo.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-f7f8c30a-6077-4bf4-8414-2872286147dc.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese roujiamo 肉夹馍, two round toasted flatbread sandwiches filled with finely chopped braised pork, one cut open showing juicy pork filling, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "youtiao",
+      "name": "油条",
+      "file": "frontend/public/food/youtiao.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-7b8e4a13-acc1-4395-9b8f-a61daf1401c4.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese youtiao 油条, three long paired golden deep-fried dough sticks, one torn to show airy hollow interior, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "soy-milk",
+      "name": "豆浆",
+      "file": "frontend/public/food/soy-milk.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-a72f1506-c19e-4364-befd-a87b54f27e3f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese warm soy milk 豆浆, opaque pale creamy soy milk filling a single handleless ivory ceramic breakfast cup, close-up visible liquid surface, no coffee foam, no beans or other food. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "shaomai",
+      "name": "烧麦",
+      "file": "frontend/public/food/shaomai.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-2f006242-3456-4265-b8a0-a6d70a06fdee.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese sticky-rice shaomai 烧麦, six small open-top steamed dumplings with thin wrinkled wrappers filled with brown sticky rice and diced pork, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "xiaolongbao",
+      "name": "小笼包",
+      "file": "frontend/public/food/xiaolongbao.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-93b22fc3-232e-4938-8d2e-09b81d3045f5.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese xiaolongbao 小笼包, six small delicate soup dumplings with thin translucent pleated wrappers in a bamboo steamer, one opened to show pork filling and broth. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "wonton",
+      "name": "馄饨",
+      "file": "frontend/public/food/wonton.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-f13b3237-57ec-4fc0-8ec1-ab0cb9d8ad80.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese wonton soup 馄饨, thin soft folded wonton wrappers with pork filling in clear amber broth with a few scallions, ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "rice-roll",
+      "name": "肠粉",
+      "file": "frontend/public/food/rice-roll.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-90652414-5376-4ebb-89af-a8509de245ad.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Cantonese cheung fun 肠粉, silky white steamed rice noodle rolls with a little minced pork filling, light soy sauce glaze, one rectangular ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "egg-pancake",
+      "name": "鸡蛋饼",
+      "file": "frontend/public/food/egg-pancake.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-e114c388-823e-4b95-b631-5d1c96d7200b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese home-style egg pancakes 鸡蛋饼, thin soft golden egg-and-flour pancakes with scallions, folded into triangles on an ivory ceramic plate, no crispy cracker filling. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "scallion-pancake",
+      "name": "葱油饼",
+      "file": "frontend/public/food/scallion-pancake.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-87850531-4c48-4fd7-b264-be43108ae3af.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese scallion pancakes 葱油饼, golden flaky pan-fried round flatbreads with finely chopped green scallions embedded, cut into wedges on an ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tangyuan",
+      "name": "汤圆",
+      "file": "frontend/public/food/tangyuan.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-bb685381-88ea-4caf-8a02-93746702d7a3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese tangyuan 汤圆, round smooth white glutinous rice balls in clear warm sweet soup, one cut to show black sesame filling, ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "braised-pork",
+      "name": "红烧肉",
+      "file": "frontend/public/food/braised-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-649fa8ea-1a58-416c-8669-6a147c6c5673.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese braised pork belly 红烧肉, neat glossy reddish brown pork belly cubes with visible meat and fat layers, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "sweet-sour-pork",
+      "name": "糖醋里脊",
+      "file": "frontend/public/food/sweet-sour-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-2ce50c30-b291-414d-bc5d-406a56f1765a.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese sweet and sour pork tenderloin 糖醋里脊, golden crispy battered pork strips coated in glossy red-orange sweet and sour sauce with a few sesame seeds, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "fish-fragrant-pork",
+      "name": "鱼香肉丝",
+      "file": "frontend/public/food/fish-fragrant-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-663bc0e4-a0b1-4de1-8631-e29da1994c4e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese fish-fragrant shredded pork 鱼香肉丝, thin pork strips with black wood ear mushroom, carrot and bamboo shoot matchsticks in glossy reddish savory sauce, no fish, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "twice-cooked-pork",
+      "name": "回锅肉",
+      "file": "frontend/public/food/twice-cooked-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-8a80cf5b-a834-4d72-b792-4ef85ff9b2bc.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Sichuan twice-cooked pork 回锅肉, thin curled browned pork belly slices with green garlic leaves and red bean paste sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "pepper-pork-strips",
+      "name": "青椒肉丝",
+      "file": "frontend/public/food/pepper-pork-strips.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-80f3b8c3-20c7-40c3-b11d-8306d2085672.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese green pepper shredded pork 青椒肉丝, slender green bell pepper strips and lean pork matchsticks in a light glossy sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "braised-ribs",
+      "name": "红烧排骨",
+      "file": "frontend/public/food/braised-ribs.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-52ed543a-2021-451c-86af-4b02b6f8a0cb.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese braised pork ribs 红烧排骨, short bone-in pork rib pieces in glossy dark amber soy sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "sweet-sour-ribs",
+      "name": "糖醋排骨",
+      "file": "frontend/public/food/sweet-sour-ribs.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-b82731db-8023-4622-85f9-71b7fec8a81e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese sweet and sour pork ribs 糖醋排骨, short bone-in pork rib pieces coated in dark glossy caramel vinegar sauce with sesame seeds, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "potato-beef",
+      "name": "土豆炖牛肉",
+      "file": "frontend/public/food/potato-beef.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-276f3229-782e-4bdd-9689-b5386d7a0959.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese potato beef stew 土豆炖牛肉, tender browned beef chunks with golden potato chunks and a few carrot pieces in rich brown broth, shallow ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tomato-brisket",
+      "name": "番茄牛腩",
+      "file": "frontend/public/food/tomato-brisket.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-e5027eef-1827-4ab0-8923-cc2ee21861f8.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese tomato beef brisket stew 番茄牛腩, tender beef brisket chunks and soft red tomato pieces in deep red tomato broth, shallow ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "onion-beef",
+      "name": "洋葱炒牛肉",
+      "file": "frontend/public/food/onion-beef.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-dec55f52-3330-4954-8bc1-b3fe3fffb690.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese onion beef stir-fry 洋葱炒牛肉, thin tender browned beef slices with curved translucent onion slices and a little green pepper, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "braised-chicken",
+      "name": "黄焖鸡",
+      "file": "frontend/public/food/braised-chicken.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-4d9c7598-e1c4-4d29-b04a-df66de1f0586.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese yellow braised chicken 黄焖鸡, browned chicken pieces with shiitake mushrooms and green pepper chunks in rich golden brown sauce, shallow ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "three-cup-chicken",
+      "name": "三杯鸡",
+      "file": "frontend/public/food/three-cup-chicken.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-312416ea-866f-424c-a18f-ad5c85499b67.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Taiwanese three cup chicken 三杯鸡, caramelized chicken chunks with ginger slices and fresh basil leaves in glossy soy sesame sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "cola-wings",
+      "name": "可乐鸡翅",
+      "file": "frontend/public/food/cola-wings.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-c90315d9-e78d-45aa-ba85-1c2e8dae23fc.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese cola chicken wings 可乐鸡翅, six whole chicken mid-wings with glossy reddish brown caramelized glaze and a few sesame seeds, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "mushroom-chicken",
+      "name": "香菇炖鸡",
+      "file": "frontend/public/food/mushroom-chicken.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-eb6ddb3e-6ccf-4385-9c9e-ea5c705c5eb0.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese shiitake chicken stew 香菇炖鸡, bone-in chicken pieces and plump whole brown shiitake mushrooms in clear golden broth, ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "steamed-fish",
+      "name": "清蒸鱼",
+      "file": "frontend/public/food/steamed-fish.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-091aa556-9fd1-4394-ac38-2de7a4330b70.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese steamed whole fish 清蒸鱼, one whole silver-skinned sea bass on an oval ivory plate with thin ginger and scallion shreds and a little soy sauce, entire fish and plate visible. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06",
+      "retired": true,
+      "retired_on": "2026-10-06"
+    },
+    {
+      "id": "braised-fish",
+      "name": "红烧鱼",
+      "file": "frontend/public/food/braised-fish.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-063fb457-44a6-4aa0-aae3-14d46963cedc.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese braised whole fish 红烧鱼, one whole golden browned fish coated in glossy reddish brown soy sauce, a few scallion pieces, oval ivory ceramic plate, entire fish visible. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "sweet-sour-fish",
+      "name": "糖醋鱼",
+      "file": "frontend/public/food/sweet-sour-fish.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-f12506cd-1150-4ca1-aee9-8997eed5df23.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese sweet and sour whole fish 糖醋鱼, one whole crispy fried fish with diagonal scored cuts coated in glossy red-orange sweet and sour sauce, oval ivory ceramic plate, entire fish visible. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-shrimp",
+      "name": "蒜蓉虾",
+      "file": "frontend/public/food/garlic-shrimp.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-4a2372a4-53cc-4c86-a6b7-fe2d29677b7e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese steamed garlic shrimp 蒜蓉虾, six large orange shell-on prawns split lengthwise and topped with finely minced garlic and a few scallions, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "braised-shrimp",
+      "name": "油焖大虾",
+      "file": "frontend/public/food/braised-shrimp.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-bc6460a7-c586-4567-8b17-9e83b6322827.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese oil-braised prawns 油焖大虾, large intact shell-on orange-red prawns in glossy rich savory sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-broccoli",
+      "name": "蒜蓉西兰花",
+      "file": "frontend/public/food/garlic-broccoli.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-eb50925f-5400-4536-a0fd-d8ce37fbe945.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese garlic broccoli 蒜蓉西兰花, vibrant green broccoli florets lightly stir-fried with finely minced garlic, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "torn-cabbage",
+      "name": "手撕包菜",
+      "file": "frontend/public/food/torn-cabbage.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-5fa54095-9641-413b-915a-aaee7dc60ee9.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese hand-torn cabbage stir-fry 手撕包菜, irregular tender pale green cabbage pieces with slightly charred edges and a few dried red chili pieces, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "vinegar-cabbage",
+      "name": "醋溜白菜",
+      "file": "frontend/public/food/vinegar-cabbage.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-c7f3ee96-d805-4685-a009-1f57b164af7b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese vinegar napa cabbage 醋溜白菜, white napa cabbage stem pieces and pale yellow green leaves in a light glossy vinegar sauce with a few red chili pieces, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "eggplant-beans",
+      "name": "豆角烧茄子",
+      "file": "frontend/public/food/eggplant-beans.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-81c47582-5405-4547-907b-501bdcf5861b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese braised eggplant and green beans 豆角烧茄子, purple eggplant batons and long green bean segments in glossy brown savory sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "fish-fragrant-eggplant",
+      "name": "鱼香茄子",
+      "file": "frontend/public/food/fish-fragrant-eggplant.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-1539cd36-d9e2-430f-8902-6a3d4d8d9cf4.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese fish-fragrant eggplant 鱼香茄子, thick soft purple eggplant batons in reddish garlic sauce with a small amount of minced pork and scallions, no fish, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "di-san-xian",
+      "name": "地三鲜",
+      "file": "frontend/public/food/di-san-xian.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-f1f3f05d-46c7-4e8b-80b1-042ecace4605.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese di san xian 地三鲜, golden potato chunks, purple eggplant chunks and bright green pepper wedges in glossy brown sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "dry-fried-beans",
+      "name": "干煸四季豆",
+      "file": "frontend/public/food/dry-fried-beans.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-790db028-063b-44e3-b258-c5c7c04beed8.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese dry-fried green beans 干煸四季豆, long green bean segments with wrinkled blistered skins and a little minced pork and dried chili pieces, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "moo-shu-pork",
+      "name": "木须肉",
+      "file": "frontend/public/food/moo-shu-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-fe1853f1-a231-4d7e-9804-5869935e7f1f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese moo shu pork 木须肉, tender pork slices, fluffy scrambled egg, black wood ear mushroom and cucumber slices in light sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "home-style-tofu",
+      "name": "家常豆腐",
+      "file": "frontend/public/food/home-style-tofu.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-70dfee3a-fe8e-4657-936a-6dac7083154b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese home-style tofu 家常豆腐, golden pan-fried triangular tofu slices with green pepper, carrot and black wood ear mushroom in savory sauce, ivory ceramic plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "steamed-eggs",
+      "name": "蒸蛋",
+      "file": "frontend/public/food/steamed-eggs.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-39749656-6252-488e-ba5a-d1ff5af46be3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese steamed egg custard 蒸蛋, silky perfectly smooth pale yellow egg custard with a thin soy sauce drizzle and tiny scallion garnish, shallow ivory ceramic bowl, no chopped egg pieces. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "winter-melon-ribs",
+      "name": "冬瓜排骨汤",
+      "file": "frontend/public/food/winter-melon-ribs.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10b8c-782e-7280-8324-b9b4def8b59c\\exec-adff94a4-a6e0-4d29-b3d0-43844d156909.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square dish photograph for a Chinese meal-planning app. Subject: Chinese winter melon pork rib soup 冬瓜排骨汤, translucent pale white winter melon chunks and short bone-in pork ribs in clear broth with a little scallion, ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered, whole plate or bowl visible with safe space around its edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "pepper-cured-pork",
+      "name": "辣椒炒腊肉",
+      "file": "frontend/public/food/pepper-cured-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-44457a6a-c282-47f2-8c56-f698bb2f258a.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 辣椒炒腊肉 — thin slices of smoked cured pork belly with translucent fat and dark edges, abundant chopped green chilies. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "pepper-egg",
+      "name": "辣椒炒蛋",
+      "file": "frontend/public/food/pepper-egg.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-4c8db40c-e637-41d2-aa9a-774fef33d2c2.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 辣椒炒蛋 — fluffy golden scrambled eggs with sliced green chili peppers. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "pepper-small-fish",
+      "name": "辣椒炒小鱼",
+      "file": "frontend/public/food/pepper-small-fish.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-99787808-f207-424f-bc32-60283f3c9e10.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 辣椒炒小鱼 — small whole fried dried river fish about finger length mixed with chopped green chilies, crisp fish silhouettes clearly visible. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "ham-egg",
+      "name": "火腿炒蛋",
+      "file": "frontend/public/food/ham-egg.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-bac577f1-a1d8-4916-af2f-f884d87d8996.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 火腿炒蛋 — fluffy golden scrambled eggs with pink rectangular ham slices. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "salt-baked-chicken",
+      "name": "盐焗鸡",
+      "file": "frontend/public/food/salt-baked-chicken.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-2b738ece-dd19-4919-aa3a-7f686fa403fd.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 盐焗鸡 — chopped bone-in salt-baked chicken with pale golden yellow skin, ivory meat, no sauce or peppers. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "steamed-sea-bass",
+      "name": "清蒸鲈鱼",
+      "file": "frontend/public/food/steamed-sea-bass.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-ea6477ee-405f-4bf5-8b8d-910395a4a48a.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清蒸鲈鱼 — one whole steamed sea bass with silver gray skin, head and tail intact, ginger matchsticks and scallion threads, light soy sauce on oval ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "flash-fried-beef",
+      "name": "爆炒牛肉",
+      "file": "frontend/public/food/flash-fried-beef.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-303b7394-13d7-4aa5-9b6f-eabd574b6736.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 爆炒牛肉 — thin tender beef slices rapidly wok fried with green and red chilies and garlic. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tofu-puffs-pork",
+      "name": "油豆腐炒肉",
+      "file": "frontend/public/food/tofu-puffs-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-0f3266b3-970b-44ba-950c-9353c82d715d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 油豆腐炒肉 — golden porous fried tofu puffs halved to reveal airy interior, fresh pork slices and green peppers in savory sauce. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tofu-puffs-cured-pork",
+      "name": "油豆腐炒腊肉",
+      "file": "frontend/public/food/tofu-puffs-cured-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-b40d57ee-0e0c-4b0f-b9f1-5902abec8002.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 油豆腐炒腊肉 — golden airy fried tofu puffs, thin dark smoked cured pork belly slices and green garlic shoots. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "bean-curd-skin-pork",
+      "name": "腐竹炒肉",
+      "file": "frontend/public/food/bean-curd-skin-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-41f07f76-e2bc-448d-a80e-4763e5773358.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 腐竹炒肉 — rehydrated wrinkled beige dried bean curd sticks cut into batons, tender fresh pork slices with a few green peppers. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-napa-cabbage",
+      "name": "清炒白菜",
+      "file": "frontend/public/food/stir-fried-napa-cabbage.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-a0ea0661-14d6-468e-b54f-c0b70b43a0e5.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒白菜 — lightly stir fried napa cabbage, broad pale green crinkled leaves and thick white stems, light garlic, no chilies or dark sauce. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-bitter-melon",
+      "name": "清炒苦瓜",
+      "file": "frontend/public/food/stir-fried-bitter-melon.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-01ef506b-be90-447e-b5f0-09a5d6693df0.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒苦瓜 — bright green crescent slices of bitter melon, clearly visible ridged pebbled skin and hollow center, light garlic, no meat or eggs. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "chopped-chili-fish-head",
+      "name": "剁椒鱼头",
+      "file": "frontend/public/food/chopped-chili-fish-head.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-104a5b36-1c92-4c41-837a-b8a43cca49d8.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 剁椒鱼头 — large steamed split fish head with white flesh and recognizable eyes and cheeks, generously covered in finely chopped bright red fermented chilies. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "dongan-chicken",
+      "name": "东安鸡",
+      "file": "frontend/public/food/dongan-chicken.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-979575d5-30c8-4d44-abbb-2974c11da50c.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 东安鸡 — Hunan Dongan chicken, thin strips of pale cooked chicken with red chilies, ginger matchsticks, scallions in a lightly glossy vinegar dressing. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "steamed-cured-meats",
+      "name": "腊味合蒸",
+      "file": "frontend/public/food/steamed-cured-meats.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-df04b934-5112-46ab-97ea-438bca73c538.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 腊味合蒸 — Hunan steamed cured meats, three separate neat sections of dark smoked pork belly slices, sliced reddish smoked sausage and pieces of smoked fish on one ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "yongzhou-blood-duck",
+      "name": "永州血鸭",
+      "file": "frontend/public/food/yongzhou-blood-duck.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-d456a0cc-9cb4-494f-b864-56c179baa069.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 永州血鸭 — Yongzhou blood duck, small chopped bone-in duck pieces in rich thick dark reddish brown duck blood sauce with green chili chunks, no raw blood. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "hunan-spicy-crayfish",
+      "name": "口味虾",
+      "file": "frontend/public/food/hunan-spicy-crayfish.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-84976929-c0e8-419c-8a42-a7066035f72f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 口味虾 — Hunan spicy crayfish, whole bright red cooked crayfish with shells and claws in red chili broth, garlic and green chilies in ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "mashed-pepper-century-egg",
+      "name": "擂辣椒皮蛋",
+      "file": "frontend/public/food/mashed-pepper-century-egg.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-9b7c9dec-e441-4332-baaf-e9e405c4a9e3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 擂辣椒皮蛋 — blistered green chilies roughly mashed with chunky wedges of century eggs with translucent brown whites and dark green yolks, served in simple ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "blistered-green-peppers",
+      "name": "虎皮青椒",
+      "file": "frontend/public/food/blistered-green-peppers.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-4a53c0d9-a2bc-4807-bb17-c2b6b34e650e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 虎皮青椒 — whole long green peppers pan blistered with visible browned tiger skin patches and glossy light soy vinegar sauce. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "sour-beans-minced-pork",
+      "name": "酸豆角炒肉末",
+      "file": "frontend/public/food/sour-beans-minced-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-720d10a8-beda-416c-b6a2-4f0cceaeb942.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 酸豆角炒肉末 — finely chopped pickled long beans with yellow green color and minced pork, a little red chili, dry savory stir fry. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "xiangxi-grandmas-vegetables",
+      "name": "湘西外婆菜",
+      "file": "frontend/public/food/xiangxi-grandmas-vegetables.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-94a0b8f3-bfcc-4f78-ad22-78c09ef52861.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 湘西外婆菜 — Xiangxi grandma vegetables, finely chopped dark brown preserved mustard greens and preserved radish with chopped red and green chilies, dry stir fry. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-shoots-cured-pork",
+      "name": "蒜苗炒腊肉",
+      "file": "frontend/public/food/garlic-shoots-cured-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-95c1916d-1477-4e42-9b37-9499fdf7e3e8.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜苗炒腊肉 — dark smoked cured pork belly slices with translucent fat stir fried with abundant bright green garlic shoots. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "dry-pot-cauliflower",
+      "name": "干锅花菜",
+      "file": "frontend/public/food/dry-pot-cauliflower.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-10b7a495-cec0-4d29-a0bd-e7701ffe6328.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 干锅花菜 — dry pot cauliflower, small ivory cauliflower florets with slightly toasted edges, red chili pieces and thin pork belly slices. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "hunan-mixed-pork-egg",
+      "name": "农家一碗香",
+      "file": "frontend/public/food/hunan-mixed-pork-egg.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-bbbe8562-1e83-47a1-aab0-6e2155b7f19d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 农家一碗香 — Hunan farmer bowl, browned fresh pork belly slices with golden pan fried egg pieces and abundant green chili segments. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "firm-tofu-pork",
+      "name": "香干炒肉",
+      "file": "frontend/public/food/firm-tofu-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-0f8bdac7-c231-4804-b2d7-0e1e37b89233.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 香干炒肉 — brown edged firm pressed tofu cut into slender strips with fresh pork strips and green chili strips. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "chives-river-shrimp",
+      "name": "韭菜炒河虾",
+      "file": "frontend/public/food/chives-river-shrimp.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-164cd5ed-4b45-4918-87ee-15b31fc63e52.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 韭菜炒河虾 — tiny whole river shrimp with translucent orange pink shells stir fried with vivid green Chinese chive segments. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "dried-radish-cured-pork",
+      "name": "萝卜干炒腊肉",
+      "file": "frontend/public/food/dried-radish-cured-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-b5260b9f-5ec2-4f4a-bd77-42d3a139f986.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 萝卜干炒腊肉 — golden brown dried radish strips stir fried with dark smoked cured pork belly slices and a little chopped red chili. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "chopped-chili-taro",
+      "name": "剁椒蒸芋头",
+      "file": "frontend/public/food/chopped-chili-taro.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-97f57543-08ea-42ed-bd86-9b71aa38bb0f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 剁椒蒸芋头 — steamed peeled baby taro chunks with creamy white slightly purple speckled interior, chopped red fermented chili topping and scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "hot-sour-lotus-root",
+      "name": "酸辣藕丁",
+      "file": "frontend/public/food/hot-sour-lotus-root.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-54369e0e-8252-4411-90b5-fe47dc12899e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 酸辣藕丁 — small ivory lotus root cubes with recognizable tiny holes, chopped red chili and scallions in glossy vinegar chili sauce. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "white-chili-pork",
+      "name": "白辣椒炒肉",
+      "file": "frontend/public/food/white-chili-pork.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-97fd69ab-f8db-4e25-8b29-05da1c3be793.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 白辣椒炒肉 — Hunan preserved white chilies, pale ivory yellow fermented pepper segments stir fried with fresh pork slices, very few red chili accents. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "dry-pot-pork-intestine",
+      "name": "干锅肥肠",
+      "file": "frontend/public/food/dry-pot-pork-intestine.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-882de925-7be3-4b89-a67d-d0c9e5570476.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 干锅肥肠 — cooked pork intestine rings with browned edges, onion wedges, green and red chilies in dry spicy glossy sauce on ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "changsha-stinky-tofu",
+      "name": "长沙臭豆腐",
+      "file": "frontend/public/food/changsha-stinky-tofu.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-addac36d-2a2b-493b-9e54-c60c4d3d218f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 长沙臭豆腐 — Changsha stinky tofu, several black charcoal colored fried tofu cubes split open to reveal pale soft centers, topped with chopped red chilies, garlic and a little cilantro in savory broth. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "changsha-rice-noodles",
+      "name": "长沙米粉",
+      "file": "frontend/public/food/changsha-rice-noodles.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-6e664408-eef6-4ab8-8efa-ac7487b12655.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 长沙米粉 — Changsha flat rice noodle soup, broad white rice noodles in clear savory broth, pork strips, chopped scallions and a few pickled long bean bits in one ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "changde-beef-rice-noodles",
+      "name": "常德牛肉粉",
+      "file": "frontend/public/food/changde-beef-rice-noodles.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-b50047d4-f210-4737-bdb8-0d4ab055a789.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 常德牛肉粉 — Changde round rice noodles, thick cylindrical white rice noodles in reddish brown savory broth, several stewed beef chunks, chopped scallions in one ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "hot-sour-glass-noodles",
+      "name": "酸辣粉",
+      "file": "frontend/public/food/hot-sour-glass-noodles.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-8d03f80e-92e7-4a4f-b184-07d8c39c3880.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 酸辣粉 — Chinese hot and sour sweet potato glass noodle soup, translucent brown glass noodles in reddish chili vinegar broth, roasted peanuts, scallions and a few pickled vegetables in one ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "reganmian",
+      "name": "热干面",
+      "file": "frontend/public/food/reganmian.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-053f5dfb-e1da-4fc0-8709-8faa59dda159.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 热干面 — Wuhan reganmian dry noodles, yellow wheat noodles coated in thick brown sesame paste, finely chopped pickled radish and scallions, no soup in one ivory ceramic bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "shengjianbao",
+      "name": "生煎包",
+      "file": "frontend/public/food/shengjianbao.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-3d67961b-3cbe-4e9e-a5ac-14dd78732a75.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 生煎包 — Chinese pan fried pork buns, several round fluffy white buns with golden browned crispy bottoms, black sesame and chopped scallions on top, one tilted to show its crisp base on ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "potstickers",
+      "name": "锅贴",
+      "file": "frontend/public/food/potstickers.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-1f105903-373c-42f6-b8ff-e03534b312db.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 锅贴 — Chinese potstickers, elongated crescent pan fried dumplings with browned crisp flat bottoms and white folded tops, arranged on ivory plate, one turned to show golden base. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "sticky-rice-roll",
+      "name": "糯米饭团",
+      "file": "frontend/public/food/sticky-rice-roll.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-d174feeb-2c41-4f85-9e56-610b40894978.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 糯米饭团 — Chinese breakfast sticky rice roll, two oblong white glutinous rice cylinders, one cut open to reveal crisp fried dough, pork floss and pickled mustard filling on ivory plate, visible rice grains. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "ciba",
+      "name": "糍粑",
+      "file": "frontend/public/food/ciba.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-f4d1cb11-b172-4105-be9d-bfe6d4eafba4.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 糍粑 — Hunan ciba glutinous rice cakes, rectangular pan fried white rice cake pieces with golden crisp surfaces, one split to reveal dense stretchy white glutinous interior on ivory plate, no sesame seeds. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tofu-pudding",
+      "name": "豆腐脑",
+      "file": "frontend/public/food/tofu-pudding.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-d2ba166e-16bb-47ce-8866-8614c2515909.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 豆腐脑 — Chinese savory tofu pudding, very soft silky white tofu curds in light amber gravy with small wood ear mushroom pieces and chopped scallions in ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "hulatang",
+      "name": "胡辣汤",
+      "file": "frontend/public/food/hulatang.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-67f3d13d-819d-47ff-915d-ae29dd0fe620.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 胡辣汤 — Chinese hulatang spicy pepper breakfast soup, thick glossy amber brown soup containing small beef pieces, wood ear mushroom ribbons, kelp strips and bean curd skin in one ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "pumpkin-millet-porridge",
+      "name": "小米南瓜粥",
+      "file": "frontend/public/food/pumpkin-millet-porridge.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-eec0b07b-d958-494f-95d0-d2ba64cc341a.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 小米南瓜粥 — millet pumpkin porridge, tiny yellow millet grains suspended in golden thick porridge with soft orange pumpkin cubes in ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "century-egg-pork-congee",
+      "name": "皮蛋瘦肉粥",
+      "file": "frontend/public/food/century-egg-pork-congee.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-0cb5cde9-5532-4013-a0ab-b8193c1a2541.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 皮蛋瘦肉粥 — Chinese century egg and lean pork congee, white rice porridge with visible dark green brown century egg chunks, thin cooked pork strips and chopped scallions in ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "eight-treasure-congee",
+      "name": "八宝粥",
+      "file": "frontend/public/food/eight-treasure-congee.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-995f2a3d-a37e-477b-9a70-345f329de493.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 八宝粥 — Chinese eight treasure congee, thick reddish purple porridge with red beans, black rice, peanuts, lotus seeds and red dates clearly visible in ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tea-eggs",
+      "name": "茶叶蛋",
+      "file": "frontend/public/food/tea-eggs.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-cb7dc07d-10bb-4923-97d6-6d2106ed9ae0.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 茶叶蛋 — Chinese tea eggs, three brown soy tea steeped eggs with delicate marbled crackle patterns, one halved to reveal firm golden yolk on ivory plate, no shells. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "steamed-corn",
+      "name": "蒸玉米",
+      "file": "frontend/public/food/steamed-corn.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-c3181a80-7635-4045-9b1c-23853f3c2597.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒸玉米 — steamed sweet corn, two short whole golden yellow corn cob segments with plump glossy kernels on ivory plate, no husks, no butter. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "name": "烤红薯",
+      "file": "frontend/public/food/roasted-sweet-potato.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-b83de0a7-1c2d-41e9-9d18-d736e714cb0f.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 烤红薯 — roasted sweet potato, two small purple brown skin sweet potatoes, one torn open to show fluffy golden orange flesh, slight caramelized edges on ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "whole-wheat-sandwich",
+      "name": "全麦三明治",
+      "file": "frontend/public/food/whole-wheat-sandwich.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-7227a3a4-a5a0-4406-a97e-ff496b337c67.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 全麦三明治 — whole wheat breakfast sandwich, two triangular halves with brown whole grain bread, cooked egg slices, fresh lettuce and tomato, layered cut face visible on ivory plate. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "milk-oatmeal",
+      "name": "牛奶燕麦",
+      "file": "frontend/public/food/milk-oatmeal.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-54403eab-a8a7-4772-aefe-d8c6b46c7358.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 牛奶燕麦 — milk oatmeal, creamy pale beige cooked rolled oats with clearly visible oat flakes in ivory bowl, a few banana slices on top, no other dishes. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "yogurt-fruit-bowl",
+      "name": "酸奶水果碗",
+      "file": "frontend/public/food/yogurt-fruit-bowl.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-a3861fb3-fd19-46ea-849c-f0782ffd941d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 酸奶水果碗 — plain thick yogurt bowl topped with fresh strawberry halves, blueberries, kiwi slices and a modest amount of oat granola, white yogurt clearly visible in ivory bowl. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "steamed-rice-cake",
+      "name": "蒸发糕",
+      "file": "frontend/public/food/steamed-rice-cake.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-a3062f6d-8a27-48f0-b539-d3aea2609114.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒸发糕 — Chinese steamed fa gao rice cakes, three white lightly domed rice flour cakes with characteristic four way cracked flower tops in shallow ivory dish, one split to show airy porous crumb, no bun filling. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square, close-up three-quarter overhead view, one dish centered on an ivory ceramic plate or bowl, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this breakfast dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-youmai",
+      "name": "蒜蓉油麦菜",
+      "file": "frontend/public/food/garlic-youmai.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-4faa7ebf-270d-4e70-b176-bfe26a525407.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜蓉油麦菜 — stir-fried youmai lettuce, long narrow pale-green romaine-like leaves and white ribs, finely minced garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-water-spinach",
+      "name": "蒜蓉空心菜",
+      "file": "frontend/public/food/garlic-water-spinach.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-9abad92b-9629-4879-b676-91923bb7ead7.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜蓉空心菜 — stir-fried Chinese water spinach, vivid green hollow tubular stems and slender pointed leaves with minced garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-lettuce",
+      "name": "蒜蓉生菜",
+      "file": "frontend/public/food/garlic-lettuce.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-2bbdd097-eaeb-4deb-bf5a-10e7dac5d2d6.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜蓉生菜 — garlic stir-fried leaf lettuce, tender ruffled bright green lettuce leaves, small minced garlic pieces, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-spinach",
+      "name": "清炒菠菜",
+      "file": "frontend/public/food/stir-fried-spinach.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-e078add6-f091-430d-9850-5ad4c2e6d354.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒菠菜 — Chinese stir-fried spinach, glossy dark-green pointed leaves and slender pale-green stems, simply seasoned with garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-amaranth",
+      "name": "清炒苋菜",
+      "file": "frontend/public/food/stir-fried-amaranth.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-16d0f7cf-547b-4698-a406-534c441d0be6.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒苋菜 — Chinese red amaranth stir-fry, tender green and reddish-purple oval leaves and small stems, slight natural pink-red vegetable juice, garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-choy-sum",
+      "name": "蒜蓉菜心",
+      "file": "frontend/public/food/garlic-choy-sum.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-2eb0b09a-1fd1-42ab-a20e-64d2389bb79b.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜蓉菜心 — garlic stir-fried choy sum, tidy stalks with leafy green tops and tiny yellow flowers, thick pale-green tender stems, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-gai-lan",
+      "name": "清炒芥蓝",
+      "file": "frontend/public/food/stir-fried-gai-lan.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-c00b0222-73ff-4345-b40d-c0e4faec0816.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒芥蓝 — Chinese gai lan broccoli stir-fry, thick green stems and broad smooth dark-green leaves with a few small white florets, no Western broccoli florets, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-celtuce",
+      "name": "清炒莴笋",
+      "file": "frontend/public/food/stir-fried-celtuce.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-7fc55be9-8749-4c2b-83fb-3c6df71eb0da.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒莴笋 — Chinese peeled celtuce stem stir-fry, thin translucent pale jade-green diamond-shaped slices, a little minced garlic, no lettuce leaves or meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-luffa",
+      "name": "清炒丝瓜",
+      "file": "frontend/public/food/stir-fried-luffa.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-659fe1e5-1ba6-4ca0-9ec4-44e7868bab0c.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒丝瓜 — peeled luffa sponge gourd stir-fry, thick tender pale-green angled chunks with visible soft white seed cores, light glossy natural juices, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-zucchini",
+      "name": "清炒西葫芦",
+      "file": "frontend/public/food/stir-fried-zucchini.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-8250e2e6-91e5-48c2-b199-d233dcc47a39.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒西葫芦 — Chinese zucchini stir-fry, thin half-moon pale green zucchini slices with darker green skin rims and delicate white seed centers, garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-pumpkin",
+      "name": "清炒南瓜",
+      "file": "frontend/public/food/stir-fried-pumpkin.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-701e52f3-9403-4407-ba1e-7df9fb1221df.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒南瓜 — Chinese stir-fried pumpkin, small orange-gold peeled pumpkin slices and wedges, softly caramelized edges, lightly glossy, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-winter-melon",
+      "name": "清炒冬瓜",
+      "file": "frontend/public/food/stir-fried-winter-melon.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-f5835c80-0756-4900-8ce6-79c5606452df.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒冬瓜 — Chinese stir-fried winter melon, peeled thick translucent white and very pale green winter melon slices, a little scallion, light juices, plated stir-fry not soup, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-snow-peas",
+      "name": "蒜蓉荷兰豆",
+      "file": "frontend/public/food/garlic-snow-peas.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-02bef4a9-111c-4718-aac7-d34af9de19b3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜蓉荷兰豆 — garlic stir-fried snow peas, vivid green flat edible pea pods with small seeds visible under skin, minced garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "celery-firm-tofu",
+      "name": "芹菜炒香干",
+      "file": "frontend/public/food/celery-firm-tofu.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-97c979d0-6e44-4425-9760-1dd4c0d27fec.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 芹菜炒香干 — Chinese celery and pressed five-spice tofu stir-fry, short bright-green celery segments with ridges, thin tan tofu strips with brown edges, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-lotus-root",
+      "name": "清炒莲藕",
+      "file": "frontend/public/food/stir-fried-lotus-root.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-242d1185-e124-4f70-9141-ce7a4411e5f1.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒莲藕 — Chinese stir-fried lotus root, delicate white circular lotus root slices with characteristic round holes, scallions, no chili sauce or meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-chinese-yam",
+      "name": "清炒山药",
+      "file": "frontend/public/food/stir-fried-chinese-yam.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-03568f89-01de-4e18-b78a-23de468fab4d.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒山药 — Chinese yam stir-fry, ivory white peeled Chinese yam diagonal oval slices, lightly glossy with tiny scallion pieces, not potatoes, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "cucumber-wood-ear",
+      "name": "木耳炒黄瓜",
+      "file": "frontend/public/food/cucumber-wood-ear.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-2525ee1e-85ba-4c3b-96a6-37afe23c1059.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 木耳炒黄瓜 — Chinese cucumber and wood-ear mushroom stir-fry, crisp green cucumber diagonal diamond slices mixed with glossy dark black curled wood-ear fungi, no eggs or meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "garlic-king-oyster-mushrooms",
+      "name": "蒜香杏鲍菇",
+      "file": "frontend/public/food/garlic-king-oyster-mushrooms.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-9490b538-d8e4-486d-88bb-4e8b5193e789.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 蒜香杏鲍菇 — garlic stir-fried king oyster mushrooms, thick sliced ivory mushroom stems with a few tan cap slices, golden-brown seared edges and minced garlic, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "stir-fried-water-bamboo",
+      "name": "清炒茭白",
+      "file": "frontend/public/food/stir-fried-water-bamboo.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-e66bd451-24b8-4ffb-9764-d00f97739a84.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 清炒茭白 — Chinese water bamboo shoots zizania stir-fry, peeled ivory-white tapered shoots cut into diagonal thin strips, lightly glossy with scallion, no meat or bamboo leaves. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tomato-cauliflower",
+      "name": "番茄烧花菜",
+      "file": "frontend/public/food/tomato-cauliflower.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-120bff50-33f4-4f8a-8c54-21191583616e.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 番茄烧花菜 — Chinese cauliflower braised with tomatoes, white cauliflower florets gently coated in a light natural red tomato sauce with chunky red tomatoes, no meat. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one dish centered on an ivory ceramic plate, whole plate visible with generous safe space around the edge, food fills about 75 percent of frame. Constraints: ONLY this vegetable dish, no collage, no words or labels, no watermark or logos, no people or hands, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "seaweed-egg-soup",
+      "name": "紫菜蛋花汤",
+      "file": "frontend/public/food/seaweed-egg-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-30731bfa-fcbb-4128-86cf-417df004da27.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 紫菜蛋花汤 — clear Chinese seaweed and egg-drop soup, wispy yellow egg ribbons, dark purplish-black nori pieces, tiny scallion garnish in clear light golden broth. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "tomato-egg-soup",
+      "name": "番茄蛋花汤",
+      "file": "frontend/public/food/tomato-egg-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-451505d0-128d-479d-a1fb-96aed793e5e9.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 番茄蛋花汤 — Chinese tomato egg-drop soup, chunky ripe red tomato wedges and soft yellow egg ribbons in plentiful clear golden-red broth, tiny scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "mushroom-tofu-soup",
+      "name": "菌菇豆腐汤",
+      "file": "frontend/public/food/mushroom-tofu-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-20da109a-44af-4359-abc7-5ac8591c42ea.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 菌菇豆腐汤 — Chinese mushroom and tofu soup, ivory tofu cubes, small brown shiitake slices and delicate white enoki mushrooms in plentiful clear light broth, a few scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "luffa-egg-soup",
+      "name": "丝瓜蛋汤",
+      "file": "frontend/public/food/luffa-egg-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-247c32dd-d4b4-488e-a7fe-cef33f3521f3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 丝瓜蛋汤 — Chinese luffa and egg soup, peeled pale-green sponge gourd angled chunks and soft yellow egg ribbons in plentiful clear lightly golden broth. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "spinach-pork-liver-soup",
+      "name": "菠菜猪肝汤",
+      "file": "frontend/public/food/spinach-pork-liver-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-9f9532dc-b811-49cc-a1c0-13afc8b5d7df.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 菠菜猪肝汤 — Chinese spinach and pork liver soup, slender dark-green spinach leaves, thin fully cooked brown pork liver slices in plentiful light clear broth, ginger slivers. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "corn-rib-soup",
+      "name": "玉米排骨汤",
+      "file": "frontend/public/food/corn-rib-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-ab64e72f-bfd8-47ca-97f9-e979cf3752b3.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 玉米排骨汤 — Chinese corn and pork rib soup, short golden-yellow corn cob rounds and tender bone-in pork rib chunks in plentiful clear golden broth, minimal scallion garnish. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "lotus-root-rib-soup",
+      "name": "莲藕排骨汤",
+      "file": "frontend/public/food/lotus-root-rib-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-9c7a4424-4e66-4c07-b762-6f388b8dc2cf.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 莲藕排骨汤 — Chinese lotus root and pork rib soup, thick ivory lotus root rounds with characteristic circular holes and bone-in pork rib chunks in plentiful lightly amber broth. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "radish-beef-soup",
+      "name": "萝卜牛肉汤",
+      "file": "frontend/public/food/radish-beef-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-69be54ca-63f2-4593-8723-32b50be2f6d6.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 萝卜牛肉汤 — Chinese white daikon radish and beef soup, translucent white radish chunks and tender brown stewed beef cubes in plentiful light brown clear broth, a few scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "winter-melon-shrimp-soup",
+      "name": "冬瓜虾仁汤",
+      "file": "frontend/public/food/winter-melon-shrimp-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-1a607b14-e66f-4d51-952f-85c20933aede.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 冬瓜虾仁汤 — Chinese winter melon and shrimp soup, translucent white peeled winter melon chunks and peeled pink curled shrimp in plentiful clear broth, a few green scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "kelp-tofu-soup",
+      "name": "海带豆腐汤",
+      "file": "frontend/public/food/kelp-tofu-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-43f74f85-e101-4f6f-9022-84a96c6d8054.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 海带豆腐汤 — Chinese kelp and tofu soup, dark olive-green glossy kelp strips and ivory tofu cubes in plentiful clear mild broth, tiny scallion garnish. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "yam-chicken-soup",
+      "name": "山药鸡汤",
+      "file": "frontend/public/food/yam-chicken-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-20a89eb0-652e-4c0b-b14d-13e4efb6f3f4.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 山药鸡汤 — Chinese yam and chicken soup, peeled ivory Chinese yam cylinders and pale tender bone-in chicken pieces in plentiful clear golden broth, a few ginger slices, no unrelated herbs. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    },
+    {
+      "id": "crucian-carp-tofu-soup",
+      "name": "鲫鱼豆腐汤",
+      "file": "frontend/public/food/crucian-carp-tofu-soup.png",
+      "source": "C:\\Users\\Windows\\.codex\\generated_images\\01a10f59-cfb8-7a42-b513-e2ac84afd0e7\\exec-cbb1a6ce-3666-4f28-a6b5-87b2b9888fb7.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: square food photograph for a Chinese meal-planning app. Subject: 鲫鱼豆腐汤 — Chinese crucian carp and tofu soup, one small whole cooked crucian carp with silvery-grey skin and head, white tofu cubes and ginger in plentiful creamy milky-white fish broth, a few scallions. Style: realistic premium editorial food photography, warm natural window light, understated cream tabletop and warm ivory background, lifelike edible textures. Composition: square close-up three-quarter overhead view, one soup centered in a deep ivory ceramic bowl, whole bowl visible with safe space around its rim, soup fills about 75 percent of frame. Broth is clearly visible and generous, ingredients sit naturally inside the liquid. Constraints: ONLY this soup, no collage, no text or labels, no watermark or logos, no people or hands, no spoons, no unrelated ingredients. Generate one square photograph.",
+      "generated_on": "2026-10-06"
+    }
+  ],
+  "updated_on": "2026-10-06"
+}

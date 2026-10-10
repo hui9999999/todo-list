@@ -12,3 +12,9 @@ Desktop.ini
 *.log
 tmp/
 browser-screenshots/
+production.env
+千问key.txt
+*.dump
+
+# Superpowers 工作区运行时状态（brainstorm 服务器 PID/token 等）
+.superpowers/

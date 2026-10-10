@@ -1,0 +1,126 @@
+.pomodoro-page { --timer-accent:#b85f50; --timer-soft:#f7eae6; --timer-track:#e8d9d2; --timer-button-text:#fff; }
+.pomodoro-page.pomodoro-break { --timer-accent:var(--el-color-primary); --timer-soft:var(--el-color-primary-light-9); --timer-track:var(--el-border-color); }
+.pomodoro-layout { display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:36px; align-items:center; padding:28px 0 40px; }
+.pomodoro-timer { display:flex; flex-direction:column; align-items:center; min-width:0; }
+.pomodoro-modes { display:flex; gap:4px; padding:4px; border:1px solid var(--el-border-color); border-radius:10px; }
+.pomodoro-modes button { padding:10px 20px; background:transparent; border:0; border-radius:7px; color:var(--el-text-color-secondary); font-size:14px; }
+.pomodoro-modes button[aria-pressed=true] { color:var(--timer-accent); background:var(--timer-soft); font-weight:600; }
+.pomodoro-modes button:hover:not(:disabled) { color:var(--timer-accent); }
+.pomodoro-modes button:disabled { cursor:default; }
+.pomodoro-modes button:disabled:not([aria-pressed=true]) { opacity:.5; }
+.pomodoro-dial { position:relative; width:min(100%,340px); aspect-ratio:1; margin:32px 0 24px; }
+.pomodoro-dial svg { width:100%; height:100%; transform:rotate(-90deg); overflow:visible; }
+.pomodoro-dial circle { fill:none; stroke-width:4; }
+.pomodoro-track { stroke:var(--timer-track); }
+.pomodoro-progress { stroke:var(--timer-accent); stroke-linecap:round; transition:stroke-dashoffset .3s linear; }
+.pomodoro-dial-content { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:14px; }
+.pomodoro-round { font-size:14px; color:var(--el-text-color-secondary); }
+.pomodoro-dial .focus-clock { font-size:clamp(48px,6vw,72px); font-weight:500; font-variant-numeric:tabular-nums; letter-spacing:-.04em; line-height:1; margin:0; color:var(--el-text-color-primary); }
+.pomodoro-clock-button { font-family:inherit; background:transparent; border:0; border-radius:8px; padding:4px 8px; cursor:pointer; }
+.pomodoro-clock-button:hover { background:var(--timer-soft); }
+.pomodoro-clock-button:focus-visible { outline:2px solid var(--timer-accent); outline-offset:4px; }
+.pomodoro-clock-editor { display:flex; align-items:baseline; padding:4px 8px; max-width:100%; }
+.pomodoro-clock-editor input { width:3ch; min-width:0; padding:0 2px; border:0; border-bottom:2px solid var(--timer-accent); border-radius:0; background:transparent; color:inherit; font:inherit; letter-spacing:inherit; text-align:right; appearance:textfield; outline:none; }
+.pomodoro-clock-editor input::-webkit-inner-spin-button, .pomodoro-clock-editor input::-webkit-outer-spin-button { appearance:none; margin:0; }
+.pomodoro-clock-editor input:focus-visible { outline:none; border-bottom-color:var(--el-color-primary); }
+.pomodoro-duration-error { color:var(--el-color-danger); text-align:center; max-width:80%; line-height:1.5; }
+.pomodoro-state { font-size:14px; color:var(--timer-accent); }
+.pomodoro-controls { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; }
+.pomodoro-controls .el-button + .el-button { margin-left:0; }
+.pomodoro-controls .pomodoro-primary { min-width:140px; height:46px; --el-button-bg-color:var(--timer-accent); --el-button-border-color:var(--timer-accent); --el-button-text-color:var(--timer-button-text); --el-button-hover-text-color:var(--timer-button-text); --el-button-hover-bg-color:var(--timer-accent); --el-button-hover-border-color:var(--timer-accent); --el-button-active-bg-color:var(--timer-accent); --el-button-active-border-color:var(--timer-accent); --el-button-disabled-bg-color:var(--timer-soft); --el-button-disabled-border-color:var(--timer-track); --el-button-disabled-text-color:var(--el-text-color-secondary); }
+.pomodoro-controls .pomodoro-primary:hover:not(:disabled) { filter:brightness(.94); }
+.pomodoro-notice { font-size:14px; color:var(--el-text-color-secondary); line-height:1.7; margin:18px 0 0; text-align:center; overflow-wrap:anywhere; }
+.pomodoro-rounds { display:flex; align-items:center; gap:8px; margin-top:24px; }
+.pomodoro-rounds > span { width:8px; height:8px; border:1px solid var(--timer-track); border-radius:50%; }
+.pomodoro-rounds > .filled { border-color:var(--timer-accent); background:var(--timer-accent); }
+.pomodoro-rounds small { margin-left:6px; font-size:12px; color:var(--el-text-color-secondary); }
+.pomodoro-sidebar { border-left:1px solid var(--el-border-color); padding:12px 0 12px 28px; min-width:0; }
+.pomodoro-sidebar h2 { font-size:14px; font-weight:500; color:var(--el-text-color-secondary); margin:0 0 16px; }
+.pomodoro-task { margin-bottom:32px; }
+.pomodoro-task .el-select { width:100%; }
+.pomodoro-task .el-select__input:focus-visible { outline:none; }
+.pomodoro-task-title { font-size:18px; font-weight:500; line-height:1.6; margin:0; overflow-wrap:anywhere; }
+.pomodoro-task .field-hint { margin:12px 0 0; }
+.pomodoro-task-error { margin:12px 0 0; font-size:13px; line-height:1.6; color:var(--el-color-danger); }
+.pomodoro-task-empty { margin:0; padding:12px 16px; font-size:13px; color:var(--el-text-color-secondary); text-align:center; }
+.pomodoro-create-option { display:flex; flex-direction:column; gap:4px; max-width:100%; white-space:normal; overflow-wrap:anywhere; line-height:1.5; padding:7px 0; }
+.pomodoro-create-option small { color:var(--el-text-color-secondary); font-size:12px; }
+.el-select-dropdown__item:has(.pomodoro-create-option) { height:auto; min-height:34px; }
+.pomodoro-today > div { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.pomodoro-today p { display:flex; flex-direction:column; gap:10px; margin:0; }
+.pomodoro-today strong { font-size:30px; font-weight:500; font-variant-numeric:tabular-nums; line-height:1.2; }
+.pomodoro-today small { margin-left:5px; font-size:12px; font-weight:400; color:var(--el-text-color-secondary); }
+.pomodoro-today p > span { color:var(--el-text-color-secondary); font-size:12px; }
+.pomodoro-history { border-top:1px solid var(--el-border-color); padding-top:24px; }
+.pomodoro-history > summary { cursor:pointer; font-size:14px; }
+.pomodoro-history > summary > span { margin-left:8px; font-size:12px; color:var(--el-text-color-secondary); }
+.pomodoro-history-tools { margin:12px 0; text-align:right; }
+.pomodoro-history-row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; padding:18px 0; border-top:1px solid var(--el-border-color); }
+.pomodoro-history-row > div:first-child { flex:1; min-width:150px; }
+.pomodoro-history-row strong { font-size:14px; font-weight:500; overflow-wrap:anywhere; }
+.pomodoro-history-row p { display:flex; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--el-text-color-secondary); margin:8px 0 0; }
+.pomodoro-history-row > span { font-size:14px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.pomodoro-history-actions { display:flex; gap:6px; flex-wrap:wrap; }
+.pomodoro-history-actions .el-button + .el-button { margin-left:0; }
+html[data-theme=dark] .pomodoro-page { --timer-accent:#e09280; --timer-soft:#3c302b; --timer-track:#4b3f38; --timer-button-text:#17221e; }
+html[data-theme=dark] .pomodoro-page.pomodoro-break { --timer-accent:var(--el-color-primary); --timer-soft:var(--el-color-primary-light-9); --timer-track:var(--el-border-color); }
+@media(max-width:1100px) { .pomodoro-layout { grid-template-columns:minmax(0,1fr) 235px; gap:24px; } .pomodoro-sidebar { padding-left:20px; } .pomodoro-modes button { padding:10px 15px; } }
+@media(max-width:900px) {
+  .pomodoro-layout { grid-template-columns:minmax(0,1fr); padding:8px 0 28px; gap:32px; }
+  .pomodoro-sidebar { border-left:0; border-top:1px solid var(--el-border-color); padding:24px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .pomodoro-task { margin:0; }
+}
+@media(max-width:480px) {
+  .pomodoro-layout { gap:24px; }
+  .pomodoro-sidebar { display:contents; }
+  .pomodoro-task { grid-row:1; padding-bottom:20px; border-bottom:1px solid var(--el-border-color); }
+  .pomodoro-timer { grid-row:2; }
+  .pomodoro-today { grid-row:3; padding-top:24px; border-top:1px solid var(--el-border-color); }
+  .pomodoro-dial { width:min(100%,290px); margin:24px 0; }
+  .pomodoro-dial .focus-clock { font-size:62px; }
+  .pomodoro-today > div { gap:24px; }
+  .pomodoro-controls .pomodoro-primary { min-width:128px; }
+  .pomodoro-modes button { padding:10px 18px; }
+}
+@media(prefers-reduced-motion:reduce) { .pomodoro-progress { transition:none; } }
+@media(max-width:720px) {
+  .workspace-desktop-compact .workspace-focus .pomodoro-layout { gap:24px; }
+  .workspace-desktop-compact .workspace-focus .pomodoro-sidebar { display:contents; }
+  .workspace-desktop-compact .workspace-focus .pomodoro-task { grid-row:1; padding-bottom:20px; border-bottom:1px solid var(--el-border-color); margin:0; }
+  .workspace-desktop-compact .workspace-focus .pomodoro-timer { grid-row:2; }
+  .workspace-desktop-compact .workspace-focus .pomodoro-today { grid-row:3; padding-top:24px; border-top:1px solid var(--el-border-color); }
+  .workspace-desktop-compact .workspace-focus .pomodoro-dial { width:min(100%,240px); margin:20px 0; }
+  .workspace-desktop-compact .workspace-focus .pomodoro-dial .focus-clock { font-size:56px; }
+}
+
+.pomodoro-duration-sheet { border-radius:18px 18px 0 0; }
+.pomodoro-duration-sheet .el-drawer__header { margin-bottom:8px; padding:20px 24px 0; }
+.pomodoro-duration-sheet .el-drawer__body { padding:12px 24px; }
+.pomodoro-duration-sheet .el-drawer__footer { display:flex; justify-content:flex-end; gap:10px; padding:12px 24px max(20px,env(safe-area-inset-bottom)); }
+.pomodoro-duration-sheet .el-button + .el-button { margin-left:0; }
+.duration-wheel { position:relative; width:min(100%,260px); height:200px; margin:0 auto; }
+.duration-wheel-selection { position:absolute; inset:80px 0; pointer-events:none; border-block:1px solid var(--el-border-color); background:var(--el-fill-color-light); border-radius:8px; }
+.duration-wheel-selection span { position:absolute; right:28px; top:0; line-height:40px; font-size:14px; color:var(--el-text-color-secondary); }
+.duration-wheel-scroll { position:relative; height:200px; padding:80px 0; box-sizing:border-box; overflow-y:auto; overscroll-behavior:contain; scroll-snap-type:y mandatory; scrollbar-width:none; mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent); }
+.duration-wheel-scroll::-webkit-scrollbar { display:none; }
+.duration-wheel-scroll:focus-visible { outline:2px solid var(--el-color-primary); outline-offset:4px; border-radius:8px; }
+.duration-wheel-scroll button { display:block; width:100%; height:40px; padding:0 48px 0 0; flex:none; border:0; background:transparent; color:var(--el-text-color-secondary); font:inherit; font-size:24px; line-height:40px; scroll-snap-align:center; cursor:pointer; }
+.duration-wheel-scroll button[aria-selected=true] { color:var(--el-text-color-primary); font-weight:600; }
+@media(max-width:760px) {
+  .workspace:not(.workspace-desktop-compact) .workspace-focus > .page-header { display:none; }
+  .workspace:not(.workspace-desktop-compact) .workspace-main.workspace-focus { padding:18px 16px 28px; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:0; padding:0; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-timer,
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-sidebar { display:contents; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-modes { grid-row:1; justify-self:center; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-dial { grid-row:2; justify-self:center; width:min(100%,288px); margin:18px 0 16px; }
+  /* Keep the timer position stable while loading or changing state. */
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-dial-content { display:grid; grid-template-rows:20px 70px 20px; align-content:center; justify-items:center; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-dial .focus-clock { padding:4px 8px; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-controls { grid-row:3; margin-bottom:16px; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-task { grid-row:4; justify-self:center; width:100%; max-width:400px; padding:0; margin:0; border:0; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-task h2 { display:none; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-rounds { grid-row:5; justify-self:center; margin:18px 0 0; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-notice { grid-row:6; margin:16px 0 0; }
+  .workspace:not(.workspace-desktop-compact) .workspace-focus .pomodoro-today { grid-row:7; padding-top:20px; margin-top:24px; border-top:1px solid var(--el-border-color); }
+}

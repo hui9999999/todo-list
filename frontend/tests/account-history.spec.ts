@@ -1,0 +1,77 @@
+import {test,expect} from '@playwright/test';
+
+test('账户历史与记忆同级导航，历史和原始记录分页、重新搜索回到第一页',async({page},info)=>{
+  const requests:URLSearchParams[]=[];
+  const rows=Array.from({length:23},(_,i)=>({event_id:'event-'+i,task_id:'task',title:'项目记录 '+(i+1),completed:true,occurred_at:'2026-10-10T01:00:00Z',snapshot:{notes:'项目的原始记录'},reason:'匹配关键词'}));
+  const memories=Array.from({length:11},(_,i)=>({id:'memory-'+i,content:'记忆内容 '+(i+1),key:'规则 '+i,kind:'preference',scope:'all',pinned:false,effective_state:'active',effective_strength:1,source_kind:'explicit',version:1}));
+  await page.route('**/api/v1/**',async route=>{
+    const url=new URL(route.request().url()),path=url.pathname.replace('/api/v1','');let json:any=[];
+    if(path==='/me')json={user:{id:'account-history',email:'history@example.com',timezone:'Asia/Shanghai'},csrf_token:'test'};
+    if(path==='/settings')json={version:1,theme:'light',timezone:'Asia/Shanghai',weather_enabled:false,notifications_enabled:false};
+    if(path==='/model-preferences')json=null;
+    if(path==='/auth/desktop-link/presence')json={desktop_active:true};
+    if(path==='/history/search'){
+      requests.push(url.searchParams);
+      const filtered=url.searchParams.get('q')==='精确查找'?rows.slice(0,1):rows;
+      const number=Number(url.searchParams.get('page')),size=Number(url.searchParams.get('page_size'));
+      json={hits:filtered.slice((number-1)*size,number*size),total:filtered.length,message:''};
+    }
+    if(path==='/memories')json=memories;
+    if(path==='/tasks/task/events')json=Array.from({length:12},(_,i)=>({id:'raw-'+i,kind:'updated',occurred_at:'2026-10-10T01:00:00Z',after:{title:'原始记录 '+(i+1),notes:'',status:'todo'}}));
+    if(path==='/memories/memory-10/forget'){memories.pop();json={};}
+    await route.fulfill({json});
+  });
+  await page.goto('/account');
+  const tabs=page.getByRole('navigation',{name:'账户设置分区'});
+  await expect(tabs.getByRole('link',{name:'偏好设置',exact:true})).toBeVisible();
+  await tabs.getByRole('link',{name:'历史与记忆',exact:true}).click();
+  await expect(page).toHaveURL(/\/account\?tab=history$/);
+  await expect(tabs.getByRole('link',{name:'历史与记忆',exact:true})).toHaveAttribute('aria-current','page');
+  const pager=page.getByRole('navigation',{name:'任务历史分页',exact:true});
+  await expect(page.locator('.history-record')).toHaveCount(10);
+  await expect(pager).toContainText('共 23 条 · 第 1 / 3 页');
+  await expect(pager.getByRole('button',{name:'上一页',exact:true})).toBeDisabled();
+  await pager.getByRole('button',{name:'下一页',exact:true}).click();
+  await expect(page.locator('.history-record').first()).toContainText('项目记录 11');
+  await page.getByRole('textbox',{name:'历史关键词',exact:true}).fill('精确查找');
+  await pager.getByRole('button',{name:'上一页',exact:true}).click();
+  await expect(pager).toContainText('共 23 条 · 第 1 / 3 页');
+  expect(requests.at(-1)?.get('q')).toBe('');
+  await pager.getByRole('button',{name:'下一页',exact:true}).click();
+  await expect(pager).toContainText('第 2 / 3 页');
+  await pager.getByRole('button',{name:'下一页',exact:true}).click();
+  await expect(page.locator('.history-record')).toHaveCount(3);
+  await expect(pager.getByRole('button',{name:'下一页',exact:true})).toBeDisabled();
+  await page.screenshot({path:info.outputPath('account-history-page-3.png'),fullPage:true,animations:'disabled'});
+  await page.getByRole('textbox',{name:'历史关键词',exact:true}).fill('精确查找');
+  await page.getByRole('button',{name:'查找历史',exact:true}).click();
+  await expect(pager).toContainText('共 1 条 · 第 1 / 1 页');
+  expect(requests.at(-1)?.get('page')).toBe('1');
+  expect(requests.at(-1)?.get('page_size')).toBe('10');
+  await page.locator('.history-record summary').click();
+  await page.getByRole('button',{name:'查看原始记录',exact:true}).click();
+  await expect(page.locator('.history-events article')).toHaveCount(10);
+  const eventsPager=page.getByRole('navigation',{name:'原始事件分页',exact:true});
+  await eventsPager.getByRole('button',{name:'下一页',exact:true}).click();
+  await expect(page.locator('.history-events article')).toHaveCount(2);
+  await expect(page.locator('.history-events article').first()).toContainText('原始记录 11');
+  await page.getByRole('button',{name:'记忆',exact:true}).click();
+  const memoryPager=page.getByRole('navigation',{name:'记忆分页',exact:true});
+  await expect(page.locator('.memory-record')).toHaveCount(10);
+  await memoryPager.getByRole('button',{name:'下一页',exact:true}).click();
+  await expect(page.locator('.memory-record')).toHaveCount(1);
+  await expect(memoryPager).toContainText('共 11 条 · 第 2 / 2 页');
+  await page.getByRole('textbox',{name:'记忆关键词',exact:true}).fill('记忆内容 1');
+  await expect(memoryPager).toContainText('第 1 / 1 页');
+  await expect(page.locator('.memory-record')).toHaveCount(3);
+  await page.getByRole('textbox',{name:'记忆关键词',exact:true}).fill('');
+  await memoryPager.getByRole('button',{name:'下一页',exact:true}).click();
+  await page.getByRole('button',{name:'忘掉这条',exact:true}).click();
+  await page.getByRole('dialog').getByRole('button',{name:'确定',exact:true}).click();
+  await expect(page.getByRole('dialog')).toBeHidden();
+  await expect(memoryPager).toContainText('共 10 条 · 第 1 / 1 页');
+  await expect(page.locator('.memory-record')).toHaveCount(10);
+  if(info.project.name==='mobile')await page.setViewportSize({width:320,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:info.outputPath('account-history-memory.png'),fullPage:true,animations:'disabled'});
+});

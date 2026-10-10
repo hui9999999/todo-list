@@ -1,0 +1,25 @@
+name: ai-todo-v2
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: todo_owner
+      POSTGRES_PASSWORD: todo_owner_local
+      POSTGRES_DB: todo
+    ports:
+      - "127.0.0.1:25432:5432"
+    volumes:
+      - todo-db:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U todo_owner -d todo"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  mail:
+    image: axllent/mailpit:v1.27
+    ports:
+      - "127.0.0.1:28025:8025"
+      - "127.0.0.1:21025:1025"
+volumes:
+  todo-db:

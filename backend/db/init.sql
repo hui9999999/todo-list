@@ -1,0 +1,6 @@
+-- Local development only. Production supplies distinct secrets and roles.
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE ROLE todo_app LOGIN PASSWORD 'todo_app_local' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS;
+GRANT CONNECT ON DATABASE todo TO todo_app;
+GRANT USAGE ON SCHEMA public TO todo_app;
+ALTER DEFAULT PRIVILEGES FOR ROLE todo_owner IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO todo_app;

@@ -1,0 +1,32 @@
+.task-deadline-input.el-date-editor.el-input { width: 100%; }
+.task-deadline-input .el-input__wrapper { min-height: 44px; padding-inline: 14px; }
+.task-deadline-input .el-input__prefix { margin-right: 7px; color: var(--el-color-primary); }
+.task-deadline-calendar.el-popper { border-radius: 14px; overflow: hidden; background: var(--el-bg-color); color: var(--el-text-color-primary); }
+.task-deadline-calendar .el-picker-panel { border-radius: 14px; color: var(--el-text-color-primary); background: var(--el-bg-color); }
+.task-deadline-calendar .el-picker-panel.el-date-picker,
+.task-deadline-calendar .el-date-picker.has-sidebar,
+.task-deadline-calendar .el-date-picker.has-sidebar.has-time { width: min(348px, calc(100vw - 24px)); }
+.task-deadline-calendar .el-picker-panel__sidebar { position: static; width: 100%; display: flex; gap: 8px; padding: 10px 16px; border-right: 0; border-bottom: 1px solid var(--el-border-color-lighter); background: var(--el-fill-color-lighter); }
+.task-deadline-calendar .el-picker-panel__shortcut { width: auto; min-height: 34px; flex: 1; padding: 6px 10px; text-align: center; font-size: 13px; border: 1px solid var(--el-border-color-light); border-radius: 7px; background: var(--el-bg-color); color: var(--el-text-color-regular); }
+.task-deadline-calendar .el-picker-panel__shortcut:hover { color: var(--el-color-primary); border-color: var(--el-color-primary); background: var(--el-color-primary-light-9); }
+.task-deadline-calendar .el-picker-panel__sidebar + .el-picker-panel__body { margin-left: 0; }
+.task-deadline-calendar .el-date-picker__header { display: flex; align-items: center; justify-content: center; gap: 4px; margin: 10px 16px 6px; }
+.task-deadline-calendar .el-date-picker__header-label { font-size: 16px; font-weight: 600; padding: 0 3px; }
+.task-deadline-calendar .el-picker-panel__icon-btn { float: none; display: grid; place-items: center; width: 28px; height: 32px; margin: 0; border-radius: 6px; color: var(--el-text-color-secondary); }
+.task-deadline-calendar .el-picker-panel__icon-btn:hover { color: var(--el-color-primary); background: var(--el-fill-color-light); }
+.task-deadline-calendar .el-date-picker__prev-btn { display: flex; margin-right: auto; }
+.task-deadline-calendar .el-date-picker__next-btn { display: flex; margin-left: auto; }
+.task-deadline-calendar .el-picker-panel__content { width: auto; margin: 8px 14px 14px; }
+.task-deadline-calendar .el-date-table { font-variant-numeric: tabular-nums; font-size: 14px; }
+.task-deadline-calendar .el-date-table th { padding: 10px 0; font-weight: 400; color: var(--el-text-color-secondary); border-bottom: 1px solid var(--el-border-color-lighter); }
+.task-deadline-calendar .el-date-table td { height: 42px; padding: 2px 0; }
+.task-deadline-calendar .el-date-table-cell { height: 38px; padding: 3px 0; }
+.task-deadline-calendar .el-date-table td .el-date-table-cell__text,
+.task-deadline-calendar .el-date-table td.current:not(.disabled) .el-date-table-cell__text { width: 32px; height: 32px; line-height: 32px; border-radius: 9px; }
+.task-deadline-calendar .el-date-table td.available:not(.current):hover .el-date-table-cell__text { background: var(--el-color-primary-light-9); }
+.task-deadline-calendar .el-date-table td.today .el-date-table-cell__text { box-shadow: inset 0 0 0 1px var(--el-color-primary); }
+.task-deadline-calendar .el-date-table td.current:not(.disabled) .el-date-table-cell__text { color: var(--workbench-button-text); background: var(--el-color-primary); font-weight: 600; }
+.task-deadline-calendar .el-date-picker__time-header { display: flex; gap: 8px; padding: 14px 16px 0; border-bottom: 0; }
+.task-deadline-calendar .el-date-picker__editor-wrap { width: 50%; padding: 0; }
+.task-deadline-calendar .el-picker-panel__footer { padding: 12px 16px; background: var(--el-fill-color-lighter); border-top: 1px solid var(--el-border-color-lighter); }
+.task-deadline-calendar .el-picker-panel__footer .el-button { min-height: 34px; padding: 7px 16px; }

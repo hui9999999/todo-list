@@ -21,3 +21,15 @@
 ## 🛠️ 技术栈
 
 原生 HTML + CSS + JavaScript，单文件实现，无框架、无构建工具。
+
+## 2.0 开发版
+
+安卓测试版使用 Capacitor，构建命令为 `./scripts/build-android.ps1`；安装、服务器配置与功能边界见 [安卓说明](docs/ANDROID.md)。
+
+2.0 已实现 P0–P4 的本地开发版：多厂商 AI 提案、记忆与历史、资讯与工作建议、日历、统计、专注、周期和发布准备。独立代码位于 `frontend/` 和 `backend/`，保留上述 1.0 用法。真实模型 Key、正式 SMTP 与公网 HTTPS 尚未完成发布验收。
+
+Windows 本地启动：`./scripts/start-v2.ps1`，然后访问 `http://localhost:5174`。邮箱或电话号码均可注册，无需验证码或人工审核，注册后直接进入工作台。密码重置邮件在本地开发邮箱 `http://localhost:28025` 查看。
+
+详见 [2.0 开发说明](docs/V2-DEVELOPMENT.md) 和 [P1–P4 验收与发布边界](docs/P1-P4-ACCEPTANCE.md)。
+
+小狒默认在工作台网页内显示，无需安装；支持拖动、专注倒计时、完成庆祝，以及点击聊天管理任务。Windows 桌面悬浮功能仍保留：运行 `启动小狒.cmd`，再从网页打开并绑定账号。绑定后网页与桌面版自动交接，只显示一只；关闭聊天窗口后桌面版继续运行。详见 [桌宠说明](docs/DESKTOP-PET.md)。

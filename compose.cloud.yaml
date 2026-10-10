@@ -1,0 +1,94 @@
+name: ai-todo-cloud
+x-backend-build: &backend-build
+  context: ./backend
+  network: host
+  args:
+    DEBIAN_MIRROR: https://mirrors.aliyun.com
+    PIP_INDEX_URL: https://mirrors.aliyun.com/pypi/simple
+x-runtime: &runtime
+  build: *backend-build
+  restart: unless-stopped
+  environment: &application-env
+    DATABASE_URL: ${DATABASE_URL:?Configure app database URL}
+    APP_ORIGIN: ${APP_ORIGIN:?Configure public origin}
+    COOKIE_SECURE: ${COOKIE_SECURE:-false}
+    CREDENTIAL_MASTER_KEY: ${CREDENTIAL_MASTER_KEY:?Configure credential key}
+    SYSTEM_EMBEDDING_API_KEY: ${SYSTEM_EMBEDDING_API_KEY:-}
+    SYSTEM_EMBEDDING_MODEL: ${SYSTEM_EMBEDDING_MODEL:-qwen3.7-text-embedding}
+    SYSTEM_EMBEDDING_REGION: ${SYSTEM_EMBEDDING_REGION:-cn}
+    SYSTEM_EMBEDDING_DIMENSIONS: ${SYSTEM_EMBEDDING_DIMENSIONS:-1024}
+    SMTP_HOST: ${SMTP_HOST:-127.0.0.1}
+    SMTP_PORT: ${SMTP_PORT:-587}
+    SMTP_FROM: ${SMTP_FROM:-todo@localhost.test}
+    SMTP_STARTTLS: ${SMTP_STARTTLS:-true}
+    SMTP_USERNAME: ${SMTP_USERNAME:-}
+    SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+    ARTICLE_SOURCES_FILE: /app/article-sources.json
+    NEWS_SEARCH_PROVIDER: ${NEWS_SEARCH_PROVIDER:-free}
+    BOCHA_SEARCH_API_KEY: ${BOCHA_SEARCH_API_KEY:-}
+    BOCHA_SEARCH_KEY_FILE: ${BOCHA_SEARCH_KEY_FILE:-}
+    DELETION_JOURNAL_FILE: /app/.runtime/deletion-journal.json
+  volumes:
+    - todo-runtime:/app/.runtime
+  depends_on:
+    migrate:
+      condition: service_completed_successfully
+  logging:
+    driver: json-file
+    options:
+      max-size: 10m
+      max-file: '3'
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: todo_owner
+      POSTGRES_PASSWORD: ${OWNER_DATABASE_PASSWORD:?Configure owner password}
+      POSTGRES_DB: todo
+      APP_DATABASE_PASSWORD: ${APP_DATABASE_PASSWORD:?Configure app password}
+      DISCOVERY_DATABASE_PASSWORD: ${DISCOVERY_DATABASE_PASSWORD:?Configure discovery password}
+    volumes:
+      - todo-db:/var/lib/postgresql/data
+      - ./backend/db/production-init.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U todo_owner -d todo]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  migrate:
+    build: *backend-build
+    command: [python, -m, alembic, upgrade, head]
+    environment:
+      MIGRATION_DATABASE_URL: ${MIGRATION_DATABASE_URL:?Configure owner database URL}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: 'no'
+  api:
+    <<: *runtime
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+  worker:
+    <<: *runtime
+    command: [python, -m, app.worker]
+    environment:
+      <<: *application-env
+      WORKER_DISCOVERY_DATABASE_URL: ${WORKER_DISCOVERY_DATABASE_URL:?Configure discovery URL}
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - '${WEB_PORT:-8080}:80'
+    volumes:
+      - ./frontend/dist:/srv:ro
+      - ./deploy/Caddyfile.cloud:/etc/caddy/Caddyfile:ro
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  todo-db:
+  todo-runtime:
