@@ -1,6 +1,6 @@
 # 安卓测试版
 
-最新版本：`0.1.9-test`（versionCode 10），[下载 APK](http://103.236.96.53:60673/downloads/xiaoqi-todo-android-0.1.9.apk)。签名与 v0.1.8 一致，可覆盖安装。资讯分页与收藏修复已同步，详见 [2026-10-10 发布记录](releases/2026-10-10-news-pagination.md)。
+最新版本：`0.1.10-test`（versionCode 11），[下载 APK](http://103.236.96.53:60673/downloads/xiaoqi-todo-android-0.1.10.apk)。签名与 v0.1.9 一致，可覆盖安装。AI 回答改为增量流式显示（约每 2 秒一段），详见 [2026-10-10 发布记录](releases/2026-10-10-streaming.md)。
 
 安卓 App 复用 `frontend/` 的 Vue 界面，使用 Capacitor 8。界面、菜品和小狒资源随 APK 安装，任务、账号和 AI 使用现有云端服务，需要联网。默认服务器为 `http://103.236.96.53:60673`。
 
@@ -64,3 +64,5 @@ HTTP 仅在 debug 网络配置中对现有服务器 IP 开放。正式版禁止�
 2026-10-10 更新：测试包提升为 `0.1.8-test`（versionCode 9），位于 `tmp/releases/android/settings-tz-latest/xiaoqi-todo-android-0.1.8.apk`。设置页主题下拉即选即生效（保存后持久化）；时区改为可滚动、可搜索的中文下拉（babel/CLDR 生成 551 个中文名映射，支持"上海"等城市别名与 IANA ID 搜索，值仍为 IANA 串）。包含同期网页修复：AI 助手 SSE 帧解析守卫、到期提醒键按天清理。13 项安卓分支检查通过；APK 中 301 个前端资源与 `dist-android` 逐字节一致，签名一致可覆盖安装。APK SHA-256 为 `f4590c265a892ea0e9c09e47c7b2e4e28914d431ed5cea96e8d457fb52cbc641`，大小 26,454,432 字节。构建脚本补充 UTF-8 BOM 修复 PS 5.1 解析失败，详见发布记录。
 
 2026-10-10 更新：测试包提升为 `0.1.9-test`（versionCode 10），位于 `tmp/releases/android/news-pagination-latest/xiaoqi-todo-android-0.1.9.apk`。资讯列表分页展示（每页 5 条，切换推荐/已收藏回第一页）；修复修改关注主题后旧收藏文章消失的问题——已收藏文章不再被主题过滤，改主题后仍在"已收藏"可见。13 项安卓分支检查通过（此前已跑，本次界面复用同一构建管线）；APK 内置资源与 `dist-android` 一致（另含 Capacitor 标准注入文件），签名一致可覆盖安装。APK SHA-256 为 `eb086bb76b408932deb898aebd72527168c0c8560cda4b4a24a0d6f524ced753`，大小 26,454,680 字节。
+
+2026-10-10 更新：测试包提升为 `0.1.10-test`（versionCode 11），位于 `tmp/releases/android/streaming-latest/xiaoqi-todo-android-0.1.10.apk`。AI 回答不再等生成完才显示：后端在纯聊天路径边生成边推送增量文本（JSON 信封增量解码 answer 字段，结构字段与只读查询永不流出）；安卓轮询时同步拉取增量并追加显示，约每 2 秒一段。任务操作仍需完整校验后一次性展示。13 项安卓分支检查通过；APK 内置资源与 `dist-android` 一致，签名一致可覆盖安装。APK SHA-256 为 `d390c0710511ac67ade57ad2a38e73d9238fdc10c9dc00caf42dd96acfd989b3`。
