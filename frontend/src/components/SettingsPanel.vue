@@ -9,6 +9,12 @@ import {useRoute, useRouter} from 'vue-router';
 import type {Settings, Connection, Preference, Usage, Job} from '../advanced-types';
 import {applyTheme,settingKeys} from '../themes';
 import {timezoneOptions, defaultTimezone} from '../timezones';
+const visibleTimezones=ref(timezoneOptions);
+// Match Chinese labels, city aliases (上海 -> Asia/Shanghai) or the IANA ID.
+function filterTimezones(query:string){
+  const q=query.trim().toLowerCase();
+  visibleTimezones.value=q?timezoneOptions.filter(z=>z.search.includes(q)):timezoneOptions;
+}
 import type {AccountProfile} from '../types';
 import {weatherCityGroups} from '../weather-cities';
 import DesktopPetSettings from './DesktopPetSettings.vue';
@@ -182,7 +188,7 @@ watch(()=>props.appearance,settings=>{
     <header class="preferences-heading"><h2>偏好设置</h2><el-button type="primary" native-type="submit" :loading="busy" :disabled="busy">保存设置</el-button></header>
     <section class="preference-section" aria-labelledby="preference-display"><h3 id="preference-display">显示与地区</h3><div class="preference-fields preference-fields-pair">
       <label>主题<el-select v-model="form.theme" aria-label="主题" @change="previewTheme"><el-option label="浅色" value="light"/><el-option label="夜间" value="dark"/><el-option label="暖色" value="warm"/></el-select></label>
-      <label>时区<el-select v-model="form.timezone" aria-label="账户时区" filterable default-first-option placeholder="选择时区，默认为中国标准时间"><el-option v-for="zone in timezoneOptions" :key="zone" :label="zone" :value="zone"/></el-select></label>
+      <label>时区<el-select v-model="form.timezone" aria-label="账户时区" filterable default-first-option placeholder="选择时区，默认为中国标准时间" :filter-method="filterTimezones"><el-option v-for="zone in visibleTimezones" :key="zone.id" :label="zone.label" :value="zone.id"><div class="timezone-option"><span>{{zone.label}}</span><small>{{zone.id}}</small></div></el-option></el-select></label>
     </div></section>
     <section class="preference-section" aria-labelledby="preference-schedule"><h3 id="preference-schedule">工作时间</h3><div class="preference-fields">
       <div class="preference-fields-pair">
@@ -229,3 +235,7 @@ watch(()=>props.appearance,settings=>{
 </template>
 <style scoped src="../preferences-layout.css"></style>
 <style scoped src="../account-usage.css"></style>
+<style scoped>
+.timezone-option{display:flex;justify-content:space-between;gap:12px;align-items:baseline;}
+.timezone-option small{color:var(--el-text-color-secondary, #888);font-size:12px;}
+</style>

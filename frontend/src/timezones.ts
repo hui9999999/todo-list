@@ -1,17 +1,29 @@
-// IANA time zones for the account settings selector, newest browsers provide the
-// full list; older ones fall back to a curated set. Asia/Shanghai stays on top
-// as the default account time zone.
+// Account time-zone selector options. Values stay IANA IDs (the backend validates
+// them with ZoneInfo); labels come from the bundled Chinese name table generated
+// by scripts/generate-timezone-names.py. Asia/Shanghai stays first as the default.
+import { timezoneNames, timezoneSearchAliases } from './timezone-names';
+
 export const defaultTimezone = 'Asia/Shanghai';
 
-const fallback = ['UTC', 'Asia/Shanghai', 'Asia/Hong_Kong', 'Asia/Taipei', 'Asia/Macau',
+export interface TimezoneOption { id: string; label: string; search: string }
+
+const fallbackIds = ['UTC', 'Asia/Shanghai', 'Asia/Hong_Kong', 'Asia/Taipei', 'Asia/Macau',
   'Asia/Singapore', 'Asia/Tokyo', 'Asia/Seoul', 'Asia/Bangkok', 'Asia/Kolkata',
   'Asia/Dubai', 'Europe/London', 'Europe/Paris', 'Europe/Berlin', 'Europe/Moscow',
   'America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles',
   'America/Sao_Paulo', 'America/Vancouver', 'Australia/Sydney', 'Pacific/Auckland'];
 
-export const timezoneOptions: string[] = (() => {
+function zoneIds(): string[] {
   try {
     const zones: readonly string[] = Intl.supportedValuesOf('timeZone');
-    return zones.length ? Array.from(new Set([defaultTimezone, ...zones])) : fallback;
-  } catch { return fallback; }
-})();
+    return zones.length
+      ? Array.from(new Set([defaultTimezone, ...zones])).sort((a, b) => a === defaultTimezone ? -1 : b === defaultTimezone ? 1 : a.localeCompare(b))
+      : fallbackIds;
+  } catch { return fallbackIds; }
+}
+
+export const timezoneOptions: TimezoneOption[] = zoneIds().map(id => ({
+  id,
+  label: timezoneNames[id] || id,
+  search: `${timezoneNames[id] || ''}\n${timezoneSearchAliases[id] || ''}\n${id}`.toLowerCase(),
+}));
