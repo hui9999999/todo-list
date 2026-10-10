@@ -38,7 +38,11 @@ def check_origin(request: Request) -> None:
         raise HTTPException(403, '请求来源不匹配，请从应用页面操作')
 
 
-def throttle(request: Request, db: Session) -> None:
+def throttle(request: Request, db: Session, *, record: bool = False) -> None:
+    """Count failed attempts only, so a shared NAT doing normal logins is never locked out.
+
+    Endpoints whose success path is itself costly (password reset sends email) pass
+    record=True to count every attempt."""
     key = digest(request.client.host if request.client else 'unknown')
     # Persist failures too, and serialize attempts per IP across web workers.
     with db.bind.begin() as connection:
@@ -47,7 +51,12 @@ def throttle(request: Request, db: Session) -> None:
         count = connection.scalar(select(func.count()).select_from(AuthAttempt).where(AuthAttempt.key == key))
         if count >= 60:
             raise HTTPException(429, '操作过于频繁，请在 15 分钟后重试')
-        connection.execute(AuthAttempt.__table__.insert().values(id=secrets.token_hex(16), key=key, occurred_at=utcnow()))
+        if record:
+            connection.execute(AuthAttempt.__table__.insert().values(id=secrets.token_hex(16), key=key, occurred_at=utcnow()))
+
+
+def record_failure(request: Request, db: Session) -> None:
+    throttle(request, db, record=True)
 
 
 def issue_email(db: Session, user: User, kind: str) -> None:
@@ -58,7 +67,7 @@ def issue_email(db: Session, user: User, kind: str) -> None:
     msg = EmailMessage()
     msg['From'] = settings().smtp_from
     msg['To'] = user.email
-    msg['Subject'] = '验证你的待办账户' if kind == 'verify' else '重置你的待办密码'
+    msg['Subject'] = '重置你的待办密码'
     url = settings().app_origin + '/auth?' + urlencode({'mode': kind, 'token': token})
     msg.set_content(f'请在 1 小时内打开以下链接：\n{url}\n如果不是你发起的操作，请忽略此邮件。')
     try:
@@ -230,6 +239,7 @@ def register(body: Register, request: Request, response: Response, db: Session =
     identifier = body.identifier
     existing = find_account(db, identifier)
     if existing:
+        record_failure(request, db)
         raise HTTPException(409, '该账号已注册，请直接登录')
     user = User(email=identifier if '@' in identifier else None, phone=identifier if '@' not in identifier else None,
                 nickname=body.nickname, password_hash=hasher.hash(body.password), timezone=body.timezone, verified=True)
@@ -237,6 +247,7 @@ def register(body: Register, request: Request, response: Response, db: Session =
     try:
         db.flush()
     except IntegrityError:
+        record_failure(request, db)
         raise HTTPException(409, '该账号已注册，请直接登录') from None
     return {**start_session(db, user, request, response), 'message': '注册成功'}
 
@@ -248,6 +259,7 @@ def login(body: Login, request: Request, response: Response, db: Session = Depen
     user = find_account(db, body.identifier)
     valid = hasher.verify(body.password, user.password_hash if user else DUMMY_HASH)
     if not user or not valid:
+        record_failure(request, db)
         raise HTTPException(401, '账号或密码错误')
     return start_session(db, user, request, response)
 
@@ -297,29 +309,11 @@ def update_nickname(body: NicknameUpdate, user: User = Depends(current_user), db
     return nickname_quota(db, user, now)
 
 
-@router.post('/auth/verify')
-def verify(body: TokenRequest, request: Request, db: Session = Depends(database, scope='function')):
-    check_origin(request)
-    throttle(request, db)
-    token = db.scalar(select(AuthToken).where(AuthToken.id == digest(body.token), AuthToken.kind == 'verify').with_for_update())
-    if not token or token.expires_at <= utcnow():
-        raise HTTPException(400, '链接已失效，请重新发送验证邮件')
-    db.get(User, token.user_id).verified = True
-    db.delete(token)
-    return {'message': '邮箱已验证，请登录'}
-
-
-@router.post('/auth/resend-verification')
-def resend(body: EmailRequest, request: Request, db: Session = Depends(database, scope='function')):
-    check_origin(request)
-    throttle(request, db)
-    return {'message': '注册无需验证，请直接登录'}
-
-
 @router.post('/auth/password-reset')
 def request_reset(body: EmailRequest, request: Request, db: Session = Depends(database, scope='function')):
     check_origin(request)
-    throttle(request, db)
+    # Every attempt counts: the success path sends email and must stay volume-capped.
+    throttle(request, db, record=True)
     user = db.scalar(select(User).where(User.email == str(body.email).lower()))
     if user:
         issue_email(db, user, 'reset')
@@ -332,6 +326,7 @@ def reset(body: ResetPassword, request: Request, db: Session = Depends(database,
     throttle(request, db)
     token = db.scalar(select(AuthToken).where(AuthToken.id == digest(body.token), AuthToken.kind == 'reset').with_for_update())
     if not token or token.expires_at <= utcnow():
+        record_failure(request, db)
         raise HTTPException(400, '重置链接已失效')
     user = db.get(User, token.user_id)
     user.password_hash = hasher.hash(body.password)

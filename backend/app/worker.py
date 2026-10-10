@@ -23,23 +23,58 @@ from .period_reports import schedule_reports, generate_report, schedule as repor
 
 log = logging.getLogger('todo.worker')
 
+_discovery_engine = None
+_last_heartbeat = 0.0
+
+
+def discovery_engine():
+    # One engine per process; per-tick creation churns pools and connections.
+    global _discovery_engine
+    if _discovery_engine is None:
+        configured = settings().worker_discovery_database_url
+        if not configured:
+            # deletion_markers has FORCE RLS, so the app role cannot read cross-tenant
+            # markers; the owner DSN stays the only working local-dev fallback.
+            log.warning('WORKER_DISCOVERY_DATABASE_URL 未配置，使用 owner 迁移凭据发现用户；'
+                        '生产环境请配置只读 todo_discovery DSN')
+            configured = settings().migration_database_url
+        _discovery_engine = create_engine(configured, hide_parameters=True, pool_pre_ping=True)
+    return _discovery_engine
+
+
+def write_heartbeat():
+    # /api/v1/health accepts six-minute staleness; once a minute is plenty.
+    global _last_heartbeat
+    if _last_heartbeat and time.monotonic() - _last_heartbeat < 30:
+        return
+    heartbeat = Path(settings().deletion_journal_file).parent / 'worker-heartbeat'
+    heartbeat.parent.mkdir(parents=True, exist_ok=True)
+    heartbeat.write_text(utcnow().isoformat())
+    _last_heartbeat = time.monotonic()
+
 
 def user_ids():
     # Deployment can use a separate discovery role that only SELECTs users.id.
-    engine = create_engine(settings().worker_discovery_database_url or settings().migration_database_url, hide_parameters=True)
+    engine = discovery_engine()
     try:
         with engine.begin() as conn:
             conn.execute(text("SELECT pg_advisory_xact_lock(hashtext('todo.deletion-journal'))"))
             markers = conn.execute(select(DeletionMarker)).mappings().all()
+            payload = json.dumps({'schema_version': 1, 'markers': [dict(m) for m in markers]}, default=str)
             path = Path(settings().deletion_journal_file)
-            path.parent.mkdir(parents=True, exist_ok=True)
-            # Atomic replacement avoids partial journals. Keep this file on separately backed-up storage.
-            tmp = path.with_suffix('.tmp')
-            tmp.write_text(json.dumps({'schema_version': 1, 'markers': [dict(m) for m in markers]}, default=str), encoding='utf-8')
-            tmp.replace(path)
+            # Rewrite only on change so the tick loop stays read-only when idle.
+            if not path.exists() or path.read_text(encoding='utf-8') != payload:
+                # Atomic replacement avoids partial journals. Keep this file on separately backed-up storage.
+                path.parent.mkdir(parents=True, exist_ok=True)
+                tmp = path.with_suffix('.tmp')
+                tmp.write_text(payload, encoding='utf-8')
+                tmp.replace(path)
             return list(conn.scalars(select(User.id)))
-    finally:
+    except Exception:
         engine.dispose()
+        global _discovery_engine
+        _discovery_engine = None
+        raise
 
 
 def schedule_user(user_id):
@@ -145,9 +180,7 @@ def extend_lease(user_id, job_id, attempt):
         if not job or job.state != 'running' or job.attempts != attempt:
             return False
         job.lease_until = utcnow() + timedelta(minutes=5)
-    heartbeat = Path(settings().deletion_journal_file).parent / 'worker-heartbeat'
-    heartbeat.parent.mkdir(parents=True, exist_ok=True)
-    heartbeat.write_text(utcnow().isoformat())
+    write_heartbeat()
     return True
 
 
@@ -256,8 +289,7 @@ def tick():
         except Exception as error:
             # A tenant's stale rule or disappearing account must not starve every later tenant.
             log.error('User %s tick failed: %s',user_id,type(error).__name__)
-    heartbeat = Path(settings().deletion_journal_file).parent / 'worker-heartbeat'
-    heartbeat.write_text(utcnow().isoformat())
+    write_heartbeat()
 
 
 def main():
@@ -272,7 +304,9 @@ def main():
             log.error('Worker tick failed: %s', type(error).__name__)
         if args.once:
             break
-        time.sleep(1)
+        # Raising WORKER_TICK_SECONDS sheds per-user lock churn and query load, at the
+        # cost of slower pickup of freshly enqueued jobs (agent runs included).
+        time.sleep(settings().worker_tick_seconds)
 
 
 if __name__ == '__main__':

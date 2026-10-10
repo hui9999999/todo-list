@@ -550,6 +550,7 @@ def events(identifier: str, request: Request, after: int = 0, user: User = Depen
     def replay():
         nonlocal cursor
         deadline = time.monotonic() + 25
+        delay = 0.3
         while time.monotonic() < deadline:
             with tenant_session(user_id) as session:
                 login = session.get(LoginSession, raw_session)
@@ -569,7 +570,10 @@ def events(identifier: str, request: Request, after: int = 0, user: User = Depen
                 if status in TERMINAL:
                     return
             yield ': heartbeat\n\n'
-            time.sleep(.3)
+            # Poll fast while events stream; back off while the model is thinking so
+            # idle clients stop hitting the database three times a second.
+            delay = 0.3 if records else min(1.0, delay * 1.5)
+            time.sleep(delay)
     return StreamingResponse(replay(), media_type='text/event-stream', headers={'X-Accel-Buffering': 'no'})
 
 

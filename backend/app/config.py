@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     bocha_search_key_file: str = ''
     deletion_journal_file: str = '.runtime/deletion-journal.json'
     worker_discovery_database_url: str = ''
+    worker_tick_seconds: float = Field(default=2.0, ge=0.5)
     system_embedding_api_key: SecretStr = SecretStr('')
     system_embedding_key_file: str = '.runtime/system-embedding.key'
     system_embedding_model: str = 'qwen3.7-text-embedding'

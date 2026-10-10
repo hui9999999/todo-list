@@ -30,7 +30,7 @@ def test_email_registration_logs_in_without_mail_or_verification(monkeypatch):
         assert client.post(PREFIX + '/tasks', json={'title': '注册后立即记录'}).status_code == 201
         with tenant_session(result['user']['id']) as db:
             assert db.scalar(select(AuthToken).where(AuthToken.user_id == result['user']['id'])) is None
-        assert client.post(PREFIX + '/auth/resend-verification', json={'email': email}).status_code == 200
+        assert client.post(PREFIX + '/auth/resend-verification', json={'email': email}).status_code == 404
 
 
 def test_phone_normalization_login_duplicates_and_private_data(accounts, monkeypatch):
@@ -67,6 +67,20 @@ def test_unreachable_email_and_international_phone_are_accepted(accounts):
     phone = accounts(international)
     assert phone.identifier == international
     assert phone.post(PREFIX + '/auth/login', json={'identifier': international, 'password': phone.password}).status_code == 200
+
+
+def test_successful_logins_never_trip_the_throttle(accounts):
+    # Failures count per IP; successes must not, or a shared NAT gets locked out.
+    client = accounts()
+    for _ in range(65):
+        assert client.post(PREFIX + '/auth/login', json={'email': client.email, 'password': client.password}).status_code == 200
+
+
+def test_repeated_failures_still_trip_the_throttle(accounts):
+    client = accounts()
+    for _ in range(60):
+        assert client.post(PREFIX + '/auth/login', json={'email': client.email, 'password': 'wrong-password'}).status_code == 401
+    assert client.post(PREFIX + '/auth/login', json={'email': client.email, 'password': client.password}).status_code == 429
 
 
 def test_existing_unverified_account_can_login_and_duplicate_does_not_replace_password(accounts):

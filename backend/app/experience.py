@@ -3,7 +3,7 @@ from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select, delete
+from sqlalchemy import String, or_, select, delete, update
 from sqlalchemy.orm import Session
 import httpx
 from .auth import current_user, user_json
@@ -331,20 +331,36 @@ def purge_task(db, user, root):
     from .period_reports import redact_report_tasks
     redact_report_tasks(db, user.id, ids)
     # Remove saved preview/body copies referencing deleted tasks, retaining minimal source blocks.
+    affected_runs = set()
     for row in db.scalars(select(ActionProposal).where(ActionProposal.user_id == user.id)):
         if any(a.get('task_id') in ids for a in row.actions) or any(b.get('id') in ids for b in row.before) or any(
                 r.get('task_id') in ids or any(instance.get('task_id') in ids for instance in r.get('recurrence', {}).get('instances', [])) for r in row.result):
+            if row.run_id:
+                affected_runs.add(row.run_id)
             row.actions, row.before, row.result, row.reason, row.state = [], [], [], '', 'expired'
     from .advanced_models import RunEvent, AgentRun, Message, ForgetRequest
     preferences(db, user.id, True).context_version += 1
     for identifier in ids:
         db.add(ForgetRequest(user_id=user.id, source_id=identifier, state='completed'))
         db.add(DeletionMarker(user_id=user.id, scope='task', source_id=identifier))
-    # Task facts may have been quoted by old assistant messages. Clear derived answers conservatively.
-    for run in db.scalars(select(AgentRun).where(AgentRun.user_id == user.id)):
-        run.answer, run.clarification = '', None
-    db.execute(delete(RunEvent).where(RunEvent.user_id == user.id))
-    for msg in db.scalars(select(Message).where(Message.user_id == user.id, Message.role == 'assistant')):
+    # Task facts may have been quoted by old assistant messages. Only runs, events and
+    # assistant answers that actually reference the purged tasks are cleared, so unrelated
+    # conversations and audit history survive; ids are unique, titles only over-match.
+    markers = sorted(str(value) for value in ids | {t.title for t in tasks if t.id in ids and t.title})
+    def referencing(*columns):
+        return or_(False, *[column.cast(String).contains(value) for column in columns for value in markers])
+    affected_runs.update(db.scalars(select(AgentRun.id).where(AgentRun.user_id == user.id,
+        referencing(AgentRun.answer, AgentRun.clarification.cast(String)))))
+    affected_runs.update(db.scalars(select(RunEvent.run_id).where(RunEvent.user_id == user.id,
+        referencing(RunEvent.payload.cast(String)))))
+    if affected_runs:
+        db.execute(update(AgentRun).where(AgentRun.user_id == user.id, AgentRun.id.in_(affected_runs)).values(answer='', clarification=None))
+        db.execute(delete(RunEvent).where(RunEvent.user_id == user.id, RunEvent.run_id.in_(affected_runs)))
+        conversations = set(db.scalars(select(AgentRun.conversation_id).where(AgentRun.user_id == user.id, AgentRun.id.in_(affected_runs))))
+        wiped = or_(Message.conversation_id.in_(conversations), referencing(Message.content))
+    else:
+        wiped = referencing(Message.content)
+    for msg in db.scalars(select(Message).where(Message.user_id == user.id, Message.role == 'assistant', wiped)):
         msg.content = '[相关事实已删除，派生回答已清理]'
     for t in tasks:
         if t.id in ids:

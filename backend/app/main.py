@@ -27,7 +27,7 @@ async def private_headers(request: Request, call_next):
         async for chunk in request.stream():
             size += len(chunk)
             if size > 30 * 1024 * 1024:
-                return JSONResponse(status_code=413, content={'detail': '消息附件过大，单个文件最多 8 MB，合计最多 20 MB'}, headers={'Cache-Control': 'no-store'})
+                return JSONResponse(status_code=413, content={'detail': '消息附件过大，单个文件最多 8 MB，合计最多 30 MB'}, headers={'Cache-Control': 'no-store'})
             chunks.append(chunk)
         request._body = b''.join(chunks)
     response = await call_next(request)
