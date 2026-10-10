@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import {computed, onMounted, onUnmounted, ref} from 'vue';
+import {computed, onMounted, onUnmounted, ref, watch} from 'vue';
 import {api,post} from '../api';
 import type {Recommendation,Settings} from '../advanced-types';
 
 const items=ref<Recommendation[]>([]), settings=ref<Settings|null>(null);
 const busy=ref(false), error=ref(''), note=ref(''), editing=ref(false);
 const draft=ref<string[]>([]), view=ref('all');
+const page=ref(1), pageSize=5;
 const suggestedTopics=['AI','科技','编程','设计','产品','生活','文化'];
 interface NewsStatus {id:string;state:string;message?:string;count?:number|null;retry_at?:string;outcome?:string}
 const insufficientSources=ref(false);
@@ -34,6 +35,10 @@ function content(item:Recommendation) {
   return {item,excerpt,overview:overview.trim()};
 }
 const cards=computed(()=>news.value.filter(item=>view.value!=='saved' || item.bookmarked).map(content));
+const pagedCards=computed(()=>cards.value.slice((page.value-1)*pageSize,page.value*pageSize));
+// Background reloads keep the page; switching views or losing pages snaps back into range.
+function switchView(next:string){view.value=next;page.value=1;}
+watch(cards,()=>{const max=Math.max(1,Math.ceil(cards.value.length/pageSize));if(page.value>max)page.value=max;});
 const overviews=computed(()=>[...new Set(cards.value.map(card=>card.overview).filter(Boolean))]);
 const hasLoaded=ref(false);
 async function act(fn:()=>Promise<void>) {
@@ -95,8 +100,8 @@ onUnmounted(()=>{disposed=true;stopPolling();});
     <p v-if="note" class="news-note" role="status">{{note}}</p>
     <div v-if="settings && !settings.news_enabled" class="news-disabled"><p>资讯推荐已关闭，已收藏的文章仍可阅读。</p><router-link to="/account">前往偏好设置 →</router-link></div>
     <nav v-if="news.length" class="news-filter" aria-label="资讯筛选">
-      <button :class="{active:view==='all'}" :aria-pressed="view==='all'" @click="view='all'">推荐</button>
-      <button :class="{active:view==='saved'}" :aria-pressed="view==='saved'" @click="view='saved'">已收藏</button>
+      <button :class="{active:view==='all'}" :aria-pressed="view==='all'" @click="switchView('all')">推荐</button>
+      <button :class="{active:view==='saved'}" :aria-pressed="view==='saved'" @click="switchView('saved')">已收藏</button>
       <span>{{cards.length}} 篇</span>
     </nav>
     <div v-if="busy && !hasLoaded" class="news-loading" role="status"><el-skeleton :rows="5" animated/></div>
@@ -107,7 +112,7 @@ onUnmounted(()=>{disposed=true;stopPolling();});
     </div>
     <details v-if="overviews.length" class="news-overview"><summary>本期概览</summary><p v-for="overview in overviews" :key="overview" class="preserve-lines">{{overview}}</p></details>
     <div class="news-list">
-      <article v-for="{item,excerpt} in cards" :key="item.id" class="news-article">
+      <article v-for="{item,excerpt} in pagedCards" :key="item.id" class="news-article">
         <div class="news-article-meta"><span v-if="item.topic">{{item.topic.replace(/^通用资讯·/,'')}}</span><span v-if="item.ai_curated">AI 整理 · 依据来源摘要</span><span v-if="item.source">{{item.source}}</span><time v-if="item.published_at" :datetime="item.published_at">{{published(item.published_at)}}</time></div>
         <h2><a v-if="sourceLink(item.url)" :href="item.url!" target="_blank" rel="noopener noreferrer">{{item.title}}</a><span v-else>{{item.title}}</span></h2>
         <p v-if="excerpt" class="news-excerpt" :class="{curated:item.ai_curated}">{{excerpt}}</p>
@@ -134,6 +139,10 @@ onUnmounted(()=>{disposed=true;stopPolling();});
         </footer>
       </article>
     </div>
+    <el-pagination v-if="cards.length>pageSize" class="news-pagination" background layout="prev, pager, next" :total="cards.length" :page-size="pageSize" :current-page="page" :aria-label="'资讯分页，第 '+page+' 页'" @current-change="(p:number)=>page=p"/>
   </section>
 </template>
 <style scoped src="../news-layout.css"></style>
+<style scoped>
+.news-pagination{margin-top:16px;justify-content:center;}
+</style>

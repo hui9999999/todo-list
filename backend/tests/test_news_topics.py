@@ -76,7 +76,10 @@ def test_generation_overrides_task_interests_and_hides_old_unrelated_articles(ac
     assert items[0]['topic']=='AI'
     assert client.post('/api/v1/recommendations/'+items[0]['id']+'/feedback',json={'action':'bookmark'}).status_code==200
     changed=client.put('/api/v1/news-topics',json={'version':saved['version'],'topics':['Python']}).json()
-    assert client.get('/api/v1/recommendations?kind=news').json()==[]
+    # Off-topic articles stay hidden, but bookmarks survive topic changes.
+    visible=client.get('/api/v1/recommendations?kind=news').json()
+    assert [r['title'] for r in visible]==['人工智能模型新发布']
+    assert visible[0]['bookmarked'] is True
     def stale_collect():raise AssertionError('An outdated job must not collect or summarize articles')
     monkeypatch.setattr(rec,'collect_articles',stale_collect)
     rec.generate_recommendations(client.user_id,'news',{'date':str(day),'settings_version':saved['version']})

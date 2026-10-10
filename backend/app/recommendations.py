@@ -53,7 +53,8 @@ def recommendation_list(kind: str = 'all', user: User = Depends(current_user), d
     for row in rows:
         digest = decode_digest(row.reason) if row.kind == 'news' else None
         description = article_text.get(row.url, row.reason.split('\n本批资讯概览：')[0].partition('\n')[2])
-        if row.kind == 'news' and pref.news_topics:
+        if row.kind == 'news' and pref.news_topics and not row.bookmarked:
+            # Bookmarked articles stay visible even after the user changes 关注主题.
             if digest:
                 if row.topic not in pref.news_topics:
                     continue
